@@ -1,6 +1,6 @@
 @extends("layout")
 @section("title", "Create Product List")
-@section("contentHeader", "Product")
+@section("contentHeader", "New Product")
 @section("content")
     <div class="row mt-4">
         <div class="col">

@@ -10,10 +10,6 @@
                     <h2 class="mb-0 col-lg-9 float-left">Product</h2>
                     <div class="mb-0 col-lg-3 float-right d-flex justify-content-end">
                         <a href="{{url("/new-product")}}" class="btn btn-sm btn-neutral">Create</a>
-                        @foreach($products as $product)
-                        <a href="{{url("/edit-product/{$product->__get("id")}")}}" class="btn btn-sm btn-neutral">Update</a>
-                        @endforeach
-
                     </div>
                 </div>
                 <!-- Light table -->
@@ -49,6 +45,9 @@
                                 data-sort="name">Updated At
                             </th>
                             <th scope="col" style="font-size: 14px; text-transform: capitalize!important;" class="sort"
+                                data-sort="name">Edit
+                            </th>
+                            <th scope="col" style="font-size: 14px; text-transform: capitalize!important;" class="sort"
                                 data-sort="name">Delete
                             </th>
                         </tr>
@@ -65,6 +64,9 @@
                             <td>{{$product->__get("brand_id")}}</td>
                             <td>{{$product->__get("created_at")}}</td>
                             <td>{{$product->__get("updated_at")}}</td>
+                            <td>
+                                <a href="{{url("/edit-product/{$product->__get("id")}")}}" class="btn btn-outline-dark">Edit</a>
+                            </td>
                             <td>
                                 <form action="{{url("/delete-product/{$product->__get("id")}")}}" method="post">
                                     @method("DELETE")
