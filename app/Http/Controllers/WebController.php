@@ -79,7 +79,6 @@ class WebController extends Controller
         $request->validate([ // unique voi categories(table) category_name(truong muon unique), (id khong muon bi unique)
             "product_name" => "required|min:3|unique:products,product_name,{$id}"
         ]);
-//            die("pass roi");
         try{
             $product->update([
                 "product_name" => $request->get("product_name"),
