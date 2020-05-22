@@ -43,8 +43,8 @@
                             <i class="ni ni-single-02 text-blue"></i>User Account
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                            <a class="dropdown-item" href="{{url("/list-user")}}">User List</a>
-                            <a class="dropdown-item" href="{{url("/new-user")}}">New User</a>
+                            <a class="dropdown-item" href="{{url("/list-user")}}">User Account List</a>
+                            <a class="dropdown-item" href="{{url("/new-user")}}">New UserAccount</a>
                         </div>
                     </li>
 
