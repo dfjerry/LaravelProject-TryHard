@@ -14,5 +14,12 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', "WebController@index");
-//Category
+//Category Route
 Route::get('/list-category', "WebController@listCategory");
+//Products Route
+Route::get("/list-product","WebController@listProduct");
+Route::get("/new-product","WebController@newProduct");
+Route::post("/save-product","WebController@saveProduct");
+Route::get("/edit-product/{id}","WebController@editProduct");
+Route::put("/update-product/{id}","WebController@editProduct");
+Route::delete("/delete-product/{id}","WebController@editProduct");
