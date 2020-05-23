@@ -17,6 +17,11 @@ Route::get('/', "WebController@index");
 
 //Category Router
 Route::get("/list-category","CategoryController@listCategory");
+Route::get("/new-category","CategoryController@newCategory");
+Route::post("/save-category","CategoryController@saveCategory");
+Route::get("/edit-category/{id}","CategoryController@editCategory");
+Route::put("/update-category/{id}","CategoryController@updateCategory");
+Route::delete("/delete-category/{id}","CategoryController@deleteCategory");
 
 //Products Router
 Route::get("/list-product","ProductController@listProduct");
