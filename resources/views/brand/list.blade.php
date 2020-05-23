@@ -1,13 +1,13 @@
 @extends("layout")
 @section("title", "Brand List")
-@section("contentHeader", "Band")
+@section("contentHeader", "Band List")
 @section("content")
     <div class="row mt-4">
         <div class="col">
             <div class="card">
                 <!-- Card header -->
                 <div class="card-header border-0">
-                    <h2 class="mb-0 col-lg-9 float-left">Brand</h2>
+                    <h2 class="mb-0 col-lg-9 float-left">Brand List</h2>
                     <div class="mb-0 col-lg-3 float-right d-flex justify-content-end">
                         <a href="{{url("/new-brand")}}" class="btn btn-sm btn-neutral">Create</a>
                         @foreach($brands as $brand)

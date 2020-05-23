@@ -12,9 +12,9 @@
                 <!-- Light table -->
                 <form role="form" action="{{url("/update-brand/{$brand->__get("id")}")}}" method="post">
                     @method("PUT")
-                    // method"POST" dùng để báo route
+{{--                    // method"POST" dùng để báo route--}}
                     @csrf
-                    // dùng để tạo mã token nếu thiếu sẽ báo lỗi 419
+{{--                    // dùng để tạo mã token nếu thiếu sẽ báo lỗi 419--}}
                     <div class="card-body">
                         <div class="form-group">
                             <label>Brand Name</label>
@@ -23,7 +23,7 @@
                             <span class="error invalid-feedback">{{$message}}</span>
                             @enderror
                         </div>
-                        // biến error để lưu lỗi
+{{--                        // biến error để lưu lỗi--}}
                     </div>
                     <!-- /.card-body -->
                     <div class="card-footer">

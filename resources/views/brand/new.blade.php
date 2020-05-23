@@ -2,9 +2,9 @@
 @section("title", "New Brand Listing")
 @section("contentHeader", "New Brand")
 @section("content")
-    <div class="card card-primary">
+    <div class="card card-primary mt-4">
         <div class="card-header">
-            <h3 class="card-title">Quick Example</h3>
+            <h3 class="card-title">Create A New Brand</h3>
         </div>
         <!-- /.card-header -->
         <!-- form start -->
@@ -23,7 +23,7 @@
             <!-- /.card-body -->
 
             <div class="card-footer">
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="submit" class="btn btn-primary">Create</button>
             </div>
         </form>
     </div>

@@ -7,7 +7,7 @@
             <div class="card">
                 <!-- Card header -->
                 <div class="card-header border-0">
-                    <h2 class="mb-0 col-lg-9 float-left">Product</h2>
+                    <h2 class="mb-0 col-lg-9 float-left">Product Listing</h2>
                     <div class="mb-0 col-lg-3 float-right d-flex justify-content-end">
                         <a href="{{url("/new-product")}}" class="btn btn-sm btn-neutral">Create</a>
                     </div>

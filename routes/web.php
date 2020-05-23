@@ -12,23 +12,28 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+// Router index login..
 Route::get('/', "WebController@index");
-//Category Route
-Route::get('/list-category', "WebController@listCategory");
-//Products Route
-Route::get("/list-product","WebController@listProduct");
-Route::get("/new-product","WebController@newProduct");
-Route::post("/save-product","WebController@saveProduct");
-Route::get("/edit-product/{id}","WebController@editProduct");
-Route::put("/update-product/{id}","WebController@editProduct");
-Route::delete("/delete-product/{id}","WebController@editProduct");
 
-//brand sau khi 7x7=49 lan clone
-//Brand
-Route::get('/list-brand', 'WebController@listBrand');
-Route::get('/new-brand', 'WebController@newBrand');
-Route::post('/save-brand', 'WebController@saveBrand');
-Route::get("/edit-brand/{id}", "WebController@editBrand");
-Route::put("/update-brand/{id}", "WebController@updateBrand"); //cap nhat du lieu
-Route::delete("/delete-brand/{id}", "WebController@deleteBrand");
+//Category Router
+Route::get("/list-category","CategoryController@listCategory");
+
+//Products Router
+Route::get("/list-product","ProductController@listProduct");
+Route::get("/new-product","ProductController@newProduct");
+Route::post("/save-product","ProductController@saveProduct");
+Route::get("/edit-product/{id}","ProductController@editProduct");
+Route::put("/update-product/{id}","ProductController@editProduct");
+Route::delete("/delete-product/{id}","ProductController@editProduct");
+
+//brand sau khi 7x7=49 lan clone(:T)
+//Brand Router
+Route::get('/list-brand', 'BrandController@listBrand');
+Route::get('/new-brand', 'BrandController@newBrand');
+Route::post('/save-brand', 'BrandController@saveBrand');
+Route::get("/edit-brand/{id}", "BrandController@editBrand");
+Route::put("/update-brand/{id}", "BrandController@updateBrand"); //cap nhat du lieu
+Route::delete("/delete-brand/{id}", "BrandController@deleteBrand");
+
+// User Router
+
