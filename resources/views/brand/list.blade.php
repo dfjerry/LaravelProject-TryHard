@@ -1,71 +1,60 @@
 @extends("layout")
-@section("title", "Brand List")
-@section("contentHeader", "Band List")
+@section("title","Brand Listing")
+@section("contentHeader","Brand")
 @section("content")
-    <div class="row mt-4">
-        <div class="col">
-            <div class="card">
-                <!-- Card header -->
-                <div class="card-header border-0">
-                    <h2 class="mb-0 col-lg-9 float-left">Brand List</h2>
-                    <div class="mb-0 col-lg-3 float-right d-flex justify-content-end">
-                        <a href="{{url("/new-brand")}}" class="btn btn-sm btn-neutral">Create</a>
-                        @foreach($brands as $brand)
-                            <a href="{{url("/edit-brand/{$brand->__get("id")}")}}" class="btn btn-sm btn-neutral">Update</a>
-                        @endforeach
+    <div class="card">
+        <div class="card-header">
+            <h3 class="card-title">Brand Listing</h3>
+            <div class="card-tools">
+                <div class="input-group input-group-sm" style="width: 150px;">
+                    <input type="text" name="table_search" class="form-control float-right" placeholder="Search">
 
+                    <div class="input-group-append">
+                        <button type="submit" class="btn btn-default"><i class="fas fa-search"></i></button>
                     </div>
                 </div>
-                <!-- Light table -->
-                <div class="table-responsive">
-                    <table class="table align-items-center table-flush">
-                        <thead class="thead-light">
-                        <tr>
-                            <th scope="col" style="font-size: 14px; text-transform: capitalize!important;" class="sort"
-                                data-sort="name">ID
-                            </th>
-                            <th scope="col" style="font-size: 14px; text-transform: capitalize!important;" class="sort"
-                                data-sort="name">Brand Name
-                            </th>
-                            <th scope="col" style="font-size: 14px; text-transform: capitalize!important;" class="sort"
-                                data-sort="name">Created At
-                            </th>
-                            <th scope="col" style="font-size: 14px; text-transform: capitalize!important;" class="sort"
-                                data-sort="name">Updated At
-                            </th>
-                            <th scope="col" style="font-size: 14px; text-transform: capitalize!important;" class="sort"
-                                data-sort="name">Edit
-                            </th>
-                            <th scope="col" style="font-size: 14px; text-transform: capitalize!important;" class="sort"
-                                data-sort="name">Delete
-                            </th>
-                        </tr>
-                        </thead>
-                        <tbody class="list">
-                        @foreach($brands as $brand)
-                            <tr>
-                                <td>{{$brand->__get("id")}}</td>
-                                <td>{{$brand->__get("brand_name")}}</td>
-                                <td>{{$brand->__get("created_at")}}</td>
-                                <td>{{$brand->__get("updated_at")}}</td>
-                                <td>
-                                    <a href="{{url("/edit-brand/{$brand->__get("id")}")}}" class="btn btn-outline-warning">Edit</a>
-
-                                </td>
-                                <td>
-                                    <form action="{{url("/delete-brand/{$brand->__get("id")}")}}" method="post">
-                                        @method("DELETE")
-                                        @csrf
-                                        <button type="submit" onclick="return confirm('chac khong?');" class="btn btn-outline-dark">Delete</button>
-                                    </form>
-                                </td>
-                            </tr>
-                        @endforeach
-                        </tbody>
-                    </table>
-                </div>
-                <!-- Card footer -->
             </div>
         </div>
+        <div class="card-header">
+            <a href="{{url("/new-brand")}}" class="float-right btn btn-outline-primary">+</a>
+        </div>
+        <!-- /.card-header -->
+        <div class="card-body table-responsive p-0">
+            <table class="table table-hover text-nowrap">
+                <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Brand Name</th>
+                    <th>Brand Image</th>
+                    <th>Created at</th>
+                    <th>Updated at</th>
+                    <th>Edit</th>
+                    <th>Delete</th>
+                </tr>
+                </thead>
+                <tbody>
+                @foreach($brands as $brand)
+                    <tr>
+                        <td>{{$brand->__get("id")}}</td>
+                        <td>{{$brand->__get("brand_name")}}</td>
+                        <td><img src="{{$brand->getImage()}}" width="60px"/></td>
+                        <td>{{$brand->__get("created_at")}}</td>
+                        <td>{{$brand->__get("updated_at")}}</td>
+                        <td>
+                            <a href="{{url("/edit-brand/{$brand->__get("id")}")}}" class="btn btn-outline-warning">Edit</a>
+
+                        </td>
+                        <td> <form action="{{url("/delete-brand/{$brand->__get("id")}")}}" method="post">
+                                @method("DELETE")
+                                @csrf
+                                <button type="submit" onclick="return confirm('Are you sure')"; class="btn btn-danger">Delete</button>
+                            </form></td>
+                    </tr>
+                @endforeach
+                </tbody>
+            </table>
+            {!! $brands->links() !!}
+        </div>
+        <!-- /.card-body -->
     </div>
 @endsection
