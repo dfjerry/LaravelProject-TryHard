@@ -10,7 +10,7 @@
                     <h2 class="mb-0 col-lg-9 float-left">Create New Product</h2>
                 </div>
                 <!-- Light table -->
-                <form role="form" action="{{url("save-product")}}" method="post">
+                <form role="form" action="{{url("save-product")}}" method="post" enctype="multipart/form-data">
                     @method("POST")
                     {{--            // method"POST" dùng để báo route--}}
                     @csrf
@@ -22,6 +22,10 @@
                             @error("product_name")
                             <span class="error invalid-feedback">{{$message}}</span>
                             @enderror
+                        </div>
+                        <div class="form-group">
+                            <label>Product Image</label>
+                            <input type="file" name="product_image" class="form-control @error("product_image") is-invalid @enderror">
                         </div>
                         <div class="form-group">
                             <label>Product Desc</label>

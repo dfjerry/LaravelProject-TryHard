@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 // Router index login..
-Route::get('/', "WebController@index");
+Route::get('/', "WebController@login");
 Route::get('/login', 'WebController@login');
 Route::get('/register', 'WebController@register');
 Route::get('/forgot-password', 'WebController@forgotPassword');
@@ -30,8 +30,8 @@ Route::get("/list-product","ProductController@listProduct");
 Route::get("/new-product","ProductController@newProduct");
 Route::post("/save-product","ProductController@saveProduct");
 Route::get("/edit-product/{id}","ProductController@editProduct");
-Route::put("/update-product/{id}","ProductController@editProduct");
-Route::delete("/delete-product/{id}","ProductController@editProduct");
+Route::put("/update-product/{id}","ProductController@updateProduct");
+Route::delete("/delete-product/{id}","ProductController@deleteProduct");
 
 //brand sau khi 7x7=49 lan clone(:T)
 //Brand Router

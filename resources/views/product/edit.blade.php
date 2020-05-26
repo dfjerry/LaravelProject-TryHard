@@ -10,7 +10,7 @@
                     <h2 class="mb-0 col-lg-9 float-left">Update Product</h2>
                 </div>
                 <!-- Light table -->
-                <form role="form" action="{{url("/update-product/{$product->__get("id")}")}}" method="post">
+                <form role="form" action="{{url("/update-product/{$product->__get("id")}")}}" method="post" enctype="multipart/form-data">
                     @method("PUT")
                     {{--            // method"POST" dùng để báo route--}}
                     @csrf
@@ -20,6 +20,14 @@
                             <label>Product Name</label>
                             <input type="text" value="{{$product->__get("product_name")}}" name="product_name" class="form-control @error("product_name") is-invalid @enderror" placeholder="New Product Name">
                             @error("product_name")
+                            <span class="error invalid-feedback">{{$message}}</span>
+                            @enderror
+                        </div>
+                        <div class="form-group">
+                            <div><label for="exampleInputEmail1">Product Image</label></div>
+                            <img src="{{$product->getImage()}}" style="width: 70px; height: 70px;"/>
+                            <input class="form-control @error("product_image") is-invalid @enderror" type="file" name="product_image" />
+                            @error("product_image")
                             <span class="error invalid-feedback">{{$message}}</span>
                             @enderror
                         </div>
