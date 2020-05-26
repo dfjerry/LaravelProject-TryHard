@@ -11,6 +11,7 @@ class Product extends Model
     // lọc các trường còn lại của bảng
     public $fillable = [
         "product_name",
+        "product_image",
         "product_desc",
         "price",
         "qty",
