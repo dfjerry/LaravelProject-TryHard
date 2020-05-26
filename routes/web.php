@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 // Router index login..
-Route::get('/', "WebController@login");
+Route::get('/', "WebController@index");
 Route::get('/login', 'WebController@login');
 Route::get('/register', 'WebController@register');
 Route::get('/forgot-password', 'WebController@forgotPassword');
