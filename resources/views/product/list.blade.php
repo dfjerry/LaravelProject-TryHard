@@ -24,6 +24,9 @@
                                 data-sort="name">Product Name
                             </th>
                             <th scope="col" style="font-size: 14px; text-transform: capitalize!important;" class="sort"
+                                data-sort="name">Product Image
+                            </th>
+                            <th scope="col" style="font-size: 14px; text-transform: capitalize!important;" class="sort"
                                 data-sort="name">Product Description
                             </th>
                             <th scope="col" style="font-size: 14px; text-transform: capitalize!important;" class="sort"
@@ -57,6 +60,7 @@
                             <tr>
                                 <td>{{$product->__get("id")}}</td>
                                 <td>{{$product->__get("product_name")}}</td>
+                                <td><img src="{{$product->getImage()}}" style="width: 50px; height: 50px"></td>
                                 <td>{{$product->__get("product_desc")}}</td>
                                 <td>{{$product->__get("price")}}</td>
                                 <td>{{$product->__get("qty")}}</td>
@@ -83,4 +87,5 @@
             </div>
         </div>
     </div>
+    {!! $products->links() !!}
 @endsection
