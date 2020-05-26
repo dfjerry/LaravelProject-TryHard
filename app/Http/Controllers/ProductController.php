@@ -49,9 +49,9 @@ class ProductController extends Controller
                     $fileName = time().$file->getClientOriginalName();//name client gửi lên thế nào thì sẽ lấy đc như thế,
                     //gắn mốc thời gian để phân biệt tránh trường hợp up 2 ảnh giống tên
                     //upload file into public/media
-                    $file->move(public_path("media"), $fileName);
+                    $file->move(public_path("media/products"), $fileName);
                     //convert string to productName
-                    $productImage = "media/".$fileName;
+                    $productImage = "media/products/".$fileName;
                 }
             }
             Product::create([
@@ -101,9 +101,9 @@ class ProductController extends Controller
                     $fileName = time().$file->getClientOriginalName();//name client gửi lên thế nào thì sẽ lấy đc như thế,
                     //gắn mốc thời gian để phân biệt tránh trường hợp up 2 ảnh giống tên
                     //upload file into public/media
-                    $file->move(public_path("media"), $fileName);
+                    $file->move(public_path("media/products"), $fileName);
                     //convert string to productName
-                    $productImage = "media/".$fileName;
+                    $productImage = "media/products/".$fileName;
                 }
             }
             $products->update([
