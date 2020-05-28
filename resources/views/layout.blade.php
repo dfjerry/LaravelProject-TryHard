@@ -16,10 +16,6 @@
         @yield("content")
         <x-footer/>
     </div>
-
-
-
-
 </div>
 </body>
 <x-scripts/>

@@ -44,3 +44,11 @@ Route::delete("/delete-brand/{id}", "BrandController@deleteBrand");
 
 // User Router
 
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
