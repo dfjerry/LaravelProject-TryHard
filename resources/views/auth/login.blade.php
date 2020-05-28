@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('content')
-    <body class="bg-gradient-primary">
+    <body class="bg-gradient-primary login">
 <div class="container">
     <!-- Outer Row -->
     <div class="row justify-content-center">
