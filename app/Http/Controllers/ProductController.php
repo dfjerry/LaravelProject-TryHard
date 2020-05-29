@@ -66,7 +66,7 @@ class ProductController extends Controller
         }catch (\Exception $exception){
             return redirect()->back();
         }
-        return redirect()->to("/list-product");
+        return redirect()->to("admin/list-product");
     }
 
     public function editProduct($id){
@@ -118,7 +118,7 @@ class ProductController extends Controller
         }catch (\Exception $exception){
             return redirect()->back();
         }
-        return redirect()->to("/list-product");
+        return redirect()->to("admin/list-product");
     }
     public function deleteProduct($id){
         $products = Product::findorFail($id);
@@ -127,6 +127,6 @@ class ProductController extends Controller
         }catch (\Exception $exception){
             return redirect()->back();
         }
-        return redirect()->to("/list-product");
+        return redirect()->to("admin/list-product");
     }
 }

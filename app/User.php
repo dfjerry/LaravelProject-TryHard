@@ -16,14 +16,22 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'image','email','telephone','address','password',
     ];
+    public const ADMIN_ROLE = 1;
+    public const USER_ROLE = 0;
 
     /**
      * The attributes that should be hidden for arrays.
      *
      * @var array
      */
+    public function getImage(){
+        if(is_null($this->__get("image"))){
+            return asset("media/default.jpg");
+        }
+        return asset($this->__get("image"));
+    }
     protected $hidden = [
         'password', 'remember_token',
     ];

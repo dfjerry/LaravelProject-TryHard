@@ -19,17 +19,17 @@
                             <i class="ni ni-collection text-blue"></i>Category
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                            <a class="dropdown-item" href="{{url("/list-category")}}">Category List</a>
-                            <a class="dropdown-item" href="{{url("/new-category")}}">New Category</a>
+                            <a class="dropdown-item" href="{{url("admin/list-category")}}">Category List</a>
+                            <a class="dropdown-item" href="{{url("admin/new-category")}}">New Category</a>
                         </div>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <i class="ni ni-bold text-blue"></i>Brands
+                            <i class="ni ni-bold text-blue"></i>Distributor
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                            <a class="dropdown-item" href="{{url("/list-brand")}}">Brand List</a>
-                            <a class="dropdown-item" href="{{url("/new-brand")}}">New Brand</a>
+                            <a class="dropdown-item" href="{{url("admin/list-distributor")}}">Distributor List</a>
+                            <a class="dropdown-item" href="{{url("admin/new-distributor")}}">Distributor Brand</a>
                         </div>
                     </li>
                     <li class="nav-item dropdown">
@@ -37,8 +37,8 @@
                             <i class="ni ni-app text-blue"></i>Product
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                            <a class="dropdown-item" href="{{url("/list-product")}}">Product List</a>
-                            <a class="dropdown-item" href="{{url("/new-product")}}">New Product</a>
+                            <a class="dropdown-item" href="{{url("admin/list-product")}}">Product List</a>
+                            <a class="dropdown-item" href="{{url("admin/new-product")}}">New Product</a>
                         </div>
                     </li>
                     <li class="nav-item dropdown">
@@ -46,8 +46,7 @@
                             <i class="ni ni-single-02 text-blue"></i>User Account
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                            <a class="dropdown-item" href="{{url("/list-user")}}">User List</a>
-                            <a class="dropdown-item" href="{{url("/new-user")}}">New User</a>
+                            <a class="dropdown-item" href="{{url("admin/list-user")}}">User List</a>
                         </div>
                     </li>
 

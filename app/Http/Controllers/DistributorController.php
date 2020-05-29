@@ -64,7 +64,7 @@ class DistributorController extends Controller
         } catch (\Exception $exception) {
             return redirect()->back();
         }
-        return redirect()->to("/list-distributor");
+        return redirect()->to("admin/list-distributor");
     }
 
     public function editDistributor($id)
@@ -106,7 +106,7 @@ class DistributorController extends Controller
 //            dd($exception->getMessage());
             return redirect()->back();
         }
-        return redirect()->to("/list-distributor");
+        return redirect()->to("admin/list-distributor");
     }
 
     public function deleteDistributor($id)
@@ -117,6 +117,6 @@ class DistributorController extends Controller
         } catch (\Exception $exception) {
             return redirect()->back();
         }
-        return redirect()->to("/list-distributor");
+        return redirect()->to("admin/list-distributor");
     }
 }

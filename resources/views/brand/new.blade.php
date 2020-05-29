@@ -8,7 +8,7 @@
         </div>
         <!-- /.card-header -->
         <!-- form start -->
-        <form role="form" action="{{url("/save-brand")}}" method="post"  enctype="multipart/form-data">
+        <form role="form" action="{{url("admin/save-brand")}}" method="post"  enctype="multipart/form-data">
             @method("POST")
             @csrf
             <div class="card-body">
