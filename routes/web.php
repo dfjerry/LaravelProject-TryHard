@@ -42,6 +42,15 @@ Route::get("/edit-brand/{id}", "BrandController@editBrand");
 Route::put("/update-brand/{id}", "BrandController@updateBrand"); //cap nhat du lieu
 Route::delete("/delete-brand/{id}", "BrandController@deleteBrand");
 
+
+//Distributor
+Route::get('/list-distributor', 'DistributorController@listDistributor');
+Route::get('/new-distributor', 'DistributorController@newDistributor');
+Route::post('/save-distributor', 'DistributorController@saveDistributor');
+Route::get("/edit-distributor/{id}", "DistributorController@editDistributor");
+Route::put("/update-distributor/{id}", "DistributorController@updateDistributor"); //cap nhat du lieu
+Route::delete("/delete-distributor/{id}", "DistributorController@deleteDistributor");
+
 // User Router
 
 
@@ -52,3 +61,10 @@ Route::get('/home', 'HomeController@index')->name('home');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+<<<<<<< HEAD
+=======
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+>>>>>>> ba0e1b93109cc29e9570bcb82b76147b10c37455
