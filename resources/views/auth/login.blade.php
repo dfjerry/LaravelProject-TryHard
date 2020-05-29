@@ -56,6 +56,9 @@
                                                     {{ __('Forgot Your Password?') }}
                                                 </a>
                                             @endif
+                                            <a class="btn btn-link"  style="width: 100%" href="{{ route('register') }}">
+                                                {{ __('Dont Have Account Regiser Now?') }}
+                                            </a>
                                     </div>
                                     <hr>
                                     <a href="{{url("/")}}" class="btn btn-google btn-user btn-block">

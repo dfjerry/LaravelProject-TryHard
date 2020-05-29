@@ -10,7 +10,7 @@
         <!-- /.card-header -->
         <!-- form start -->
         {{--        update thì method sẽ là put method trong form thi phai la post @method thi la put--}}
-        <form role="form" action="{{url("/update-brand/{$brand->__get("id")}")}}" method="post" enctype="multipart/form-data">
+        <form role="form" action="{{url("admin/update-brand/{$brand->__get("id")}")}}" method="post" enctype="multipart/form-data">
             @method("PUT")
             {{--            // method"POST" dùng để báo route--}}
             @csrf
