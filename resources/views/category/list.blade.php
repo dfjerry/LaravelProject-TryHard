@@ -10,9 +10,9 @@
                     <h2 class="mb-0 col-lg-9 float-left">Category List</h2>
                     <div class="mb-0 col-lg-3 float-right d-flex justify-content-end">
                         <a href="{{url("/admin/new-category")}}" class="btn btn-sm btn-neutral">Create</a>
-                        @foreach($categories as $category)
-                            <a href="{{url("/admin/edit-category/{$category->__get("id")}")}}" class="btn btn-sm btn-neutral">Update</a>
-                        @endforeach
+{{--                        @foreach($categories as $category)--}}
+{{--                            <a href="{{url("/admin/edit-category/{$category->__get("id")}")}}" class="btn btn-sm btn-neutral">Update</a>--}}
+{{--                        @endforeach--}}
 
                     </div>
                 </div>
