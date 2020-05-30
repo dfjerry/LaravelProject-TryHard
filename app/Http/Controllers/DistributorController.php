@@ -48,19 +48,13 @@ class DistributorController extends Controller
                     $logo = "media/".$fileName; // lấy nguồn file
                 }
             }
-//tự động cập nhật thời gian cho category
+            //tự động cập nhật thời gian cho category
             Distributor::create([
                 "distributor_name" => $request->get("distributor_name"),
                 "address" => $request->get("address"),
                 "telephone" => $request->get("telephone"),
                 "logo" =>$logo
             ]);
-
-            // "updated_at"=>Carbon::now(),
-            //            DB::table("categories") ->insert([
-//                "category_name" =>$request->get("category_name"),
-//                "created_at"=>Carbon::now(),
-//
         } catch (\Exception $exception) {
             return redirect()->back();
         }
@@ -70,8 +64,6 @@ class DistributorController extends Controller
     public function editDistributor($id)
     {
         $distributor = Distributor::findOrFail($id);
-
-//            abort(404); =findOrFail
         return view("distributor.edit", ["distributor" => $distributor]);
     }
 

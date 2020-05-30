@@ -9,9 +9,9 @@
                 <div class="card-header border-0">
                     <h2 class="mb-0 col-lg-9 float-left">Category List</h2>
                     <div class="mb-0 col-lg-3 float-right d-flex justify-content-end">
-                        <a href="{{url("/new-category")}}" class="btn btn-sm btn-neutral">Create</a>
+                        <a href="{{url("/admin/new-category")}}" class="btn btn-sm btn-neutral">Create</a>
                         @foreach($categories as $category)
-                            <a href="{{url("/edit-category/{$category->__get("id")}")}}" class="btn btn-sm btn-neutral">Update</a>
+                            <a href="{{url("/admin/edit-category/{$category->__get("id")}")}}" class="btn btn-sm btn-neutral">Update</a>
                         @endforeach
 
                     </div>
@@ -26,6 +26,9 @@
                             </th>
                             <th scope="col" style="font-size: 14px; text-transform: capitalize!important;" class="sort"
                                 data-sort="name">Category Name
+                            </th>
+                            <th scope="col" style="font-size: 14px; text-transform: capitalize!important;" class="sort"
+                                data-sort="name">Category Image
                             </th>
                             <th scope="col" style="font-size: 14px; text-transform: capitalize!important;" class="sort"
                                 data-sort="name">Created At
@@ -46,14 +49,15 @@
                             <tr>
                                 <td>{{$category->__get("id")}}</td>
                                 <td>{{$category->__get("category_name")}}</td>
+                                <td><img src="{{$category->getImage()}}" width="60px"/></td>
                                 <td>{{$category->__get("created_at")}}</td>
                                 <td>{{$category->__get("updated_at")}}</td>
                                 <td>
-                                    <a href="{{url("/edit-category/{$category->__get("id")}")}}" class="btn btn-outline-warning">Edit</a>
+                                    <a href="{{url("/admin/edit-category/{$category->__get("id")}")}}" class="btn btn-outline-warning">Edit</a>
 
                                 </td>
                                 <td>
-                                    <form action="{{url("/delete-category/{$category->__get("id")}")}}" method="post">
+                                    <form action="{{url("/admin/delete-category/{$category->__get("id")}")}}" method="post">
                                         @method("DELETE")
                                         @csrf
                                         <button type="submit" onclick="return confirm('chac khong?');" class="btn btn-outline-dark">Delete</button>
