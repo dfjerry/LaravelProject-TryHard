@@ -4,37 +4,16 @@
 @section("content")
     <div class="card">
         <div class="card-header">
-            <h3 class="card-title">Brand Listing</h3>
-            <div class="card-tools">
-                <div class="input-group input-group-sm" style="width: 150px;">
-                    <input type="text" name="table_search" class="form-control float-right" placeholder="Search">
-
-                    <div class="input-group-append">
-                        <button type="submit" class="btn btn-default"><i class="fas fa-search"></i></button>
-                    </div>
-                </div>
-            </div>
+            <h3 class="card-title">User Account Listing</h3>
         </div>
-{{--        <div class="card-header">--}}
-{{--            <a href="{{url("admin/new-user")}}" class="float-right btn btn-outline-primary">+</a>--}}
-{{--        </div>--}}
-        <!-- /.card-header -->
         <div class="card-body table-responsive p-0">
             <table class="table table-hover text-nowrap">
                 <thead>
                 <tr>
                     <th>ID</th>
                     <th>User Name</th>
-                    <th>User Image</th>
-                    <th>User Email</th>
-                    <th>User Telephone</th>
-                    <th>User Address</th>
-                    <th>Password</th>
-                    <th>Role</th>
-                    <th>Created_At</th>
-                    <th>Updated_At</th>
-                    <th>Edit</th>
-                    <th>Delete</th>
+                    <td>Account Status</td>
+                    <th>Action</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -42,23 +21,32 @@
                     <tr>
                         <td>{{$user->__get("id")}}</td>
                         <td>{{$user->__get("name")}}</td>
-                        <td><img src="{{$user->getImage()}}" width="60px"/></td>
-                        <td>{{$user->__get("email")}}</td>
-                        <td>{{$user->__get("telephone")}}</td>
-                        <td>{{$user->__get("address")}}</td>
-                        <td>{{$user->__get("password")}}</td>
-                        <td>{{$user->__get("role")}}</td>
-                        <td>{{$user->__get("created_at")}}</td>
-                        <td>{{$user->__get("updated_at")}}</td>
                         <td>
-                            <a href="{{url("admin/edit-user/{$user->__get("id")}")}}" class="btn btn-outline-warning">Edit</a>
-
+                            @if($user->__get("role") == 1)
+                                <a class="btn btn-danger btn-sm text-white">{{$user->__get("account_status")}}</a>
+                            @elseif($user->__get("role") == 0)
+                                <a class="btn btn-success btn-sm text-white">{{$user->__get("account_status")}}</a>
+                            @endif
                         </td>
-                        <td> <form action="{{url("admin/delete-user/{$user->__get("id")}")}}" method="post">
-                                @method("DELETE")
-                                @csrf
-                                <button type="submit" onclick="return confirm('Are you sure')"; class="btn btn-danger">Delete</button>
-                            </form></td>
+                        <td class="d-flex">
+                            @if(strcmp($user->__get("name"),"admin") == 0)
+                                <a class="btn btn-danger btn-sm text-white" onclick="alert('This user is protected')">Protected User</a>
+                            @else
+                            <a class="pr-2" href="{{url("admin/view-user/{$user->__get("id")}")}}">
+                                <button type="button" class="btn btn-info btn-sm">View Info</button>
+                            </a>
+                            <a class="pr-2" href="{{url("admin/edit-user/{$user->__get("id")}")}}">
+                                <button type="button" class="btn btn-warning btn-sm">Set Access</button>
+                            </a>
+                                <form action="{{url("admin/delete-user/{$user->__get("id")}")}}" method="post">
+                                    @method("DELETE")
+                                    @csrf
+                                    <button type="submit" onclick="return confirm('Are you sure!');"
+                                            class="btn btn-danger btn-sm">Delete
+                                    </button>
+                                </form>
+                            @endif
+                        </td>
                     </tr>
                 @endforeach
                 </tbody>

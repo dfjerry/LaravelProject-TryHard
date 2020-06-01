@@ -37,8 +37,11 @@ Route::delete("/delete-distributor/{id}", "DistributorController@deleteDistribut
 // User Router
 Route::get('/list-user', 'UserController@listUser');
 Route::get('/new-user', 'UserController@newUser');
+Route::put("/update-access/{id}","UserController@updateAccess");
 Route::post('/save-user', 'UserController@saveUser');
 Route::get("/edit-user/{id}", "UserController@editUser");
 Route::put("/update-user/{id}", "UserController@updateUser");
 Route::delete("/delete-user/{id}", "UserController@deleteUser");
+Route::get("/view-user/{id}","UserController@viewUser");
+
 

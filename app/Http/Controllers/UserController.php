@@ -18,7 +18,9 @@ class UserController extends Controller
     public function listUser()
     {
         $user = User::paginate(20);
-        return view("user.list", ["users" => $user]);
+        return view("user.list", [
+            "users" => $user,
+        ]);
     }
 
     public function editUser($id)
@@ -31,7 +33,7 @@ class UserController extends Controller
     {
         $user = User::findOrFail($id);
         $request->validate([
-            "name" => "required|min:6|unique:users,name,{$id}"
+            "name" => "required|min:2|unique:users,name,{$id}"
         ]);
 
         try {
@@ -57,7 +59,6 @@ class UserController extends Controller
                 "telephone" =>  $request->get("telephone"),
                 "address" =>  $request->get("address"),
                 "password" => $request->get("password"),
-                "role" => $request->get("role"),
             ]);
         } catch (\Exception $exception) {
             return redirect()->back();
@@ -71,6 +72,38 @@ class UserController extends Controller
         try {
             $user->delete();
         } catch (\Exception $exception) {
+            return redirect()->back();
+        }
+        return redirect()->to("admin/list-user");
+    }
+    public function viewUser($id){
+        $currentUser = User::findorFail($id);
+        return view("user.viewuser",[
+           "currentUser" => $currentUser,
+        ]);
+    }
+    public function updateAccess($id, Request $request){
+        $currentUser = User::findorFail($id);
+        try{
+               $currentUser->update([
+                   "account_status" =>  $request->get("status"),
+               ]);
+               if($currentUser->__get("account_status") == "Admin Account"){
+                   $currentUser->update([
+                       "role" =>  1,
+                   ]);
+               }
+               elseif (is_null($currentUser->__get("account_status"))){
+                   $currentUser->update([
+                       "account_status" =>  "User Account",
+                   ]);
+               }
+               else{
+                   $currentUser->update([
+                       "role" =>  0,
+                   ]);
+               }
+        }catch (\Exception $exception){
             return redirect()->back();
         }
         return redirect()->to("admin/list-user");
