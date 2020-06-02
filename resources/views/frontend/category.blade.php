@@ -710,6 +710,7 @@
                     <div class="shop-sidebar-wrapper gray-bg-7 shop-sidebar-mrg">
                         <div class="shop-widget">
                             <h4 class="shop-sidebar-title">Shop By Categories</h4>
+
                             <div class="shop-catigory">
                                 <ul id="faq">
                                     <li> <a data-toggle="collapse" data-parent="#faq" href="#shop-catigory-1">Morning Tea <i class="ion-ios-arrow-down"></i></a>

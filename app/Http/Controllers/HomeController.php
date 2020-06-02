@@ -26,6 +26,15 @@ class HomeController extends Controller
     public function index()
     {
         $products = Product::all();
+
+        // $category1 = Product::all();
+//        foreach ($category1 as $p){
+//            $slug = \Illuminate\Support\Str::slug($p->__get("category_name"));
+//            $p->slug = $slug.$p->__get("id");// luu lai vao DB
+//            $p->save();
+//            // tuong duong $p->update(["slug"=>$slug.$p->__get("id")]);
+//        }
+//        dd($products);
         foreach ($products as $p){
             $slug = \Illuminate\Support\Str::slug($p->__get("product_name"));
             $p->slug = $slug.$p->__get("id");// luu lai vao DB
@@ -51,10 +60,9 @@ class HomeController extends Controller
     }
 
     public function product(Product $product){
-        $relativeProducts = Product::with("Category")->paginate(4);
+        $product = Product::all()->paginate(10);
         return view("frontend.product",[
             "product"=>$product,
-            "relativeProducts"=>$relativeProducts
         ]);
     }
 }
