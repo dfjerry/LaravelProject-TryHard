@@ -18,6 +18,11 @@ class User extends Authenticatable
     protected $fillable = [
         'name', 'image','email','telephone','address','account_status','password','role',
     ];
+    protected $attributes = [
+        'role' => 2,
+        'account_status' => "Please give account access",
+        // them de push thoi
+    ];
     public const ADMIN_ROLE = 1;
     public const USER_ROLE = 0;
 
