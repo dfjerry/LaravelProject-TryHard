@@ -56,14 +56,6 @@
                                 @endforeach
                             </select>
                         </div>
-                        <div class="form-group">
-                            <label>Brand</label>
-                            <select name="brand_id" class="form-control">
-                                @foreach($brands as $brand)
-                                    <option value="{{$brand->__get("id")}}">{{$brand->__get("brand_name")}}</option>
-                                @endforeach
-                            </select>
-                        </div>
 
 
                         {{--                // biến error để lưu lỗi--}}

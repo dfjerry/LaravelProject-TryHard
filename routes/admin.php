@@ -17,13 +17,6 @@ Route::put("/update-product/{id}","ProductController@updateProduct");
 Route::delete("/delete-product/{id}","ProductController@deleteProduct");
 
 //brand sau khi 7x7=49 lan clone(:T)
-//Brand Router
-Route::get('/list-brand', 'BrandController@listBrand');
-Route::get('/new-brand', 'BrandController@newBrand');
-Route::post('/save-brand', 'BrandController@saveBrand');
-Route::get("/edit-brand/{id}", "BrandController@editBrand");
-Route::put("/update-brand/{id}", "BrandController@updateBrand"); //cap nhat du lieu
-Route::delete("/delete-brand/{id}", "BrandController@deleteBrand");
 
 
 //Distributor
