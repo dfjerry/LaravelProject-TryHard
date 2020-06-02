@@ -26,6 +26,8 @@
                                 <a class="btn btn-danger btn-sm text-white">{{$user->__get("account_status")}}</a>
                             @elseif($user->__get("role") == 0)
                                 <a class="btn btn-success btn-sm text-white">{{$user->__get("account_status")}}</a>
+                            @elseif($user->defaultStatus())
+                                <a class="btn btn-warning btn-sm text-white">{{$user->__get("account_status")}}</a>
                             @endif
                         </td>
                         <td class="d-flex">
@@ -41,8 +43,8 @@
                                 <form action="{{url("admin/delete-user/{$user->__get("id")}")}}" method="post">
                                     @method("DELETE")
                                     @csrf
-                                    <button type="submit" onclick="return confirm('Are you sure!');"
-                                            class="btn btn-danger btn-sm">Delete
+                                    <button type="submit" data-toggle="modal" onclick="alert('Are you sure');" class="btn btn-danger btn-sm">
+                                        Delete
                                     </button>
                                 </form>
                             @endif

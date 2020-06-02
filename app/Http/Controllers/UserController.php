@@ -93,11 +93,6 @@ class UserController extends Controller
                        "role" =>  1,
                    ]);
                }
-               elseif (is_null($currentUser->__get("account_status"))){
-                   $currentUser->update([
-                       "account_status" =>  "User Account",
-                   ]);
-               }
                else{
                    $currentUser->update([
                        "role" =>  0,
