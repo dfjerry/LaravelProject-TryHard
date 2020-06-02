@@ -18,6 +18,10 @@ class User extends Authenticatable
     protected $fillable = [
         'name', 'image','email','telephone','address','account_status','password','role',
     ];
+    protected $attributes = [
+        'role' => 2,
+        'account_status' => "Please give account access",
+    ];
     public const ADMIN_ROLE = 1;
     public const USER_ROLE = 0;
 
@@ -31,6 +35,12 @@ class User extends Authenticatable
             return asset("media/default.jpg");
         }
         return asset($this->__get("image"));
+    }
+    public function defaultStatus(){
+        if(is_null($this->__get("account_status"))){
+            return $this->__set("account_status","hehehe");
+        }
+        return $this->__get("account_status");
     }
     protected $hidden = [
         'password', 'remember_token',
