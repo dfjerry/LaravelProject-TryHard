@@ -8,3 +8,6 @@ Route::get("/category/{category:slug}", "HomeController@category");
 Route::get("/product/{product:slug}", "HomeController@product");
 
 
+Route::get('/', 'WebController@index');
+
+

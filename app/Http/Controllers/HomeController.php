@@ -32,7 +32,11 @@ class HomeController extends Controller
             $p->save();
             // tuong duong $p->update(["slug"=>$slug.$p->__get("id")]);
         }
-        return view("frontend.home");
+        $categories = Category::orderBy("created_at","ASC")->get();
+        return view("frontend.home",[
+            "categories"=>$categories,
+            "products"=>$products,
+        ]);
     }
 
     public function category(Category $category){
