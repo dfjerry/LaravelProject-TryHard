@@ -19,6 +19,7 @@ class User extends Authenticatable
         'name', 'image','email','telephone','address','account_status','password','role',
     ];
 
+
     protected $attributes = [
         'role' => 2,
         'account_status' => "Please give account access",

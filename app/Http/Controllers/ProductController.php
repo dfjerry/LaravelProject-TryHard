@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Brand;
 use App\Category;
 use App\Http\Controllers\Controller;
 use App\Product;
@@ -12,16 +11,14 @@ class ProductController extends Controller
 {
     //product Controller
     public function listProduct(){
-        $product = Product::with("Category")->with("Brand")->paginate(20);//nạp sẵn phần cần nạp trong collection
+        $product = Product::with("Category")->paginate(20);//nạp sẵn phần cần nạp trong collection
         return view("product.list",["products"=>$product]); // string la mang cac product bien duoc gui sang lam bien dau tien cua forech
     }
     public function newProduct(){
         // phai lay du lieu tu cac bang phu
         $category = Category::all();
-        $brand = Brand::all();
         return view("product.new",[
-                "categories"=>$category,
-                "brands" => $brand,
+                "categories"=>$category
             ]
         );
     }
@@ -33,8 +30,7 @@ class ProductController extends Controller
             "product_desc"=>"required",
             "price"=>"required|numeric|min:0",
             "qty"=>"required|numeric|min:1",
-            "category_id"=>"required",
-            "brand_id"=>"required",
+            "category_id"=>"required"
         ]);
         try {
             $productImage = null;
@@ -61,7 +57,6 @@ class ProductController extends Controller
                 "price"=>$request->get("price"),
                 "qty"=>$request->get("qty"),
                 "category_id"=>$request->get("category_id"),
-                "brand_id"=>$request->get("brand_id"),
             ]);
         }catch (\Exception $exception){
             return redirect()->back();
@@ -71,11 +66,9 @@ class ProductController extends Controller
 
     public function editProduct($id){
         $category = Category::all();
-        $brand = Brand::all();
         $product = Product::findOrFail($id);
         return view("product.edit",[
             "categories"=>$category,
-            "brands" => $brand,
             "product" => $product]);
     }
     public function updateProduct($id,Request $request){
@@ -86,7 +79,6 @@ class ProductController extends Controller
             "price"=>"required|numeric|min:0",
             "qty"=>"required|numeric|min:1",
             "category_id"=>"required",
-            "brand_id"=>"required",
         ]);
         try {
             $productImage = $products->get("product_image");
@@ -113,7 +105,6 @@ class ProductController extends Controller
                 "price"=>$request->get("price"),
                 "qty"=>$request->get("qty"),
                 "category_id"=>$request->get("category_id"),
-                "brand_id"=>$request->get("brand_id"),
             ]);
         }catch (\Exception $exception){
             return redirect()->back();

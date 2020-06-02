@@ -15,8 +15,7 @@ class Product extends Model
         "product_desc",
         "price",
         "qty",
-        "category_id",
-        "brand_id",
+        "category_id"
     ];
     //hàm getImage lấy ảnh ra hiển thị ở view
     public function getImage(){
@@ -27,8 +26,5 @@ class Product extends Model
     }
     public function Category(){
         return $this->belongsTo("\App\Category", "category_id");
-    }
-    public function Brand(){
-        return $this->belongsTo("\App\Brand");
     }
 }

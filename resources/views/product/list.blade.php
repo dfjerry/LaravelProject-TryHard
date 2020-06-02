@@ -39,9 +39,6 @@
                                 data-sort="name">Category
                             </th>
                             <th scope="col" style="font-size: 14px; text-transform: capitalize!important;" class="sort"
-                                data-sort="name">Brand
-                            </th>
-                            <th scope="col" style="font-size: 14px; text-transform: capitalize!important;" class="sort"
                                 data-sort="name">Created At
                             </th>
                             <th scope="col" style="font-size: 14px; text-transform: capitalize!important;" class="sort"
@@ -65,7 +62,6 @@
                                 <td>{{$product->__get("price")}}</td>
                                 <td>{{$product->__get("qty")}}</td>
                                 <td>{{$product->__get("category_id")}}</td>
-                                <td>{{$product->__get("brand_id")}}</td>
                                 <td>{{$product->__get("created_at")}}</td>
                                 <td>{{$product->__get("updated_at")}}</td>
                                 <td>

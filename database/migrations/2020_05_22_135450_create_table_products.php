@@ -21,8 +21,6 @@ class CreateTableProducts extends Migration
             $table->unsignedInteger("qty")->default(1);//neu ko truyen gia tri tu dong co gia tri = 1, unsigned là số ko âm
             $table->unsignedBigInteger("category_id");//tạo trường cho khóa ngoại và phải cùng kiểu và phải thêm unsign tức là không âm
             $table->foreign("category_id")->references("id")->on("categories");//gắn khóa, tham chiếu sang trường id của bảng categories
-            $table->unsignedBigInteger("brand_id");//tạo trường cho khóa ngoại và phải cùng kiểu và phải thêm unsign tức là không âm
-            $table->foreign("brand_id")->references("id")->on("brands");//gắn khóa, tham chiếu sang trường id của bảng categories
             $table->timestamps();
         });
     }
