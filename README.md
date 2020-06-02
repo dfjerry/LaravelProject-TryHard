@@ -12,7 +12,7 @@
 Tea Cozy Admin DashBoard + Front-end Page(Updating)
 ## Demo Page
 
-[Here is my demo link to my homepage using firebase](https://serene-springs-17732.herokuapp.com/).
+[Here is my demo link to my homepage using HerokuAPP](https://serene-springs-17732.herokuapp.com/).
 
 ## Dowload Source
 
