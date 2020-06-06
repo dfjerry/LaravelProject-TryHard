@@ -25,22 +25,23 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $products = Product::all();
 
-        // $category1 = Product::all();
-//        foreach ($category1 as $p){
+        //Tạo slug Categories
+//         $category = Category::all();
+//        foreach ($category as $p){
 //            $slug = \Illuminate\Support\Str::slug($p->__get("category_name"));
 //            $p->slug = $slug.$p->__get("id");// luu lai vao DB
 //            $p->save();
 //            // tuong duong $p->update(["slug"=>$slug.$p->__get("id")]);
 //        }
-//        dd($products);
-        foreach ($products as $p){
-            $slug = \Illuminate\Support\Str::slug($p->__get("product_name"));
-            $p->slug = $slug.$p->__get("id");// luu lai vao DB
-            $p->save();
-            // tuong duong $p->update(["slug"=>$slug.$p->__get("id")]);
-        }
+        //Tạo slug product
+        $products = Product::all();
+//        foreach ($products as $p){
+//            $slug = \Illuminate\Support\Str::slug($p->__get("product_name"));
+//            $p->slug = $slug.$p->__get("id");// luu lai vao DB
+//            $p->save();
+//            // tuong duong $p->update(["slug"=>$slug.$p->__get("id")]);
+//        }
         $categories = Category::orderBy("created_at","ASC")->get();
         return view("frontend.home",[
             "categories"=>$categories,
@@ -50,7 +51,7 @@ class HomeController extends Controller
 
     public function category(Category $category){
 //        $products = Product::where("category_id",$category->__get("id"))->paginate(12);
-        $products = $category->Products()->paginate(12);
+        $products = $category->Products()->simplePaginate(12);
         // dung trong model de lay tat ca\
         return view("frontend.category",[
             "category"=>$category,
@@ -60,9 +61,10 @@ class HomeController extends Controller
     }
 
     public function product(Product $product){
-        $product = Product::all()->paginate(10);
-        return view("frontend.product",[
+        $relativeProducts = Product::with("Category")->paginate(4);//nạp sẵn phần cần nạp trong collection, lấy theo kiểu quan hệ
+        return view("frontend.product", [
             "product"=>$product,
+            "relativeProduct"=>$relativeProducts,
         ]);
     }
 }
