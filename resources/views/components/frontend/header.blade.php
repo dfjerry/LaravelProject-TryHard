@@ -3,26 +3,22 @@
     <div class="header-bottom">
         <div class="container">
             <div class="row">
-                <div class="col-lg-3 col-md-4 col-6">
+                <div class="col-lg-2 col-md-3 col-4">
                     <div class="logo">
-                        <a href="index.html">
-                            <img alt="" src="assets/img/logo/logo.png">
+                        <a href="/home">
+                            <img alt="" src="{{url("assets/img/logo/logo.png")}}">
                         </a>
                     </div>
                 </div>
-                <div class="col-lg-9 col-md-8 col-6">
+                <div class="col-lg-10 col-md-7 col-8">
                     <div class="header-bottom-right">
                         <div class="main-menu">
                             <nav>
                                 <ul>
-                                    <li class="top-hover"><a href="index.html">home</a>
-                                        <ul class="submenu">
-                                            <li><a href="index.html">home version 1</a></li>
-                                            <li><a href="index-2.html">home version 2</a></li>
-                                        </ul>
+                                    <li class="top-hover"><a href="/home">home</a>
                                     </li>
-                                    <li><a href="about-us.html">about</a></li>
-                                    <li class="mega-menu-position top-hover"><a href="shop.html">shop</a>
+                                    <li><a href="#">about</a></li>
+                                    <li class="mega-menu-position top-hover"><a href="#">shop</a>
                                         <ul class="mega-menu">
                                             <li>
                                                 <ul>
@@ -111,16 +107,13 @@
                             </nav>
                         </div>
                         <div class="header-currency">
-                            <span class="digit">USD <i class="ti-angle-down"></i></span>
-                            <div class="dollar-submenu">
-                                <ul>
-                                    <li><a href="#">$ USD</a></li>
-                                    <li><a href="#">€ EUR</a></li>
-                                    <li><a href="#">£ GBP</a></li>
-                                    <li><a href="#">₹ INR</a></li>
-                                    <li><a href="#">¥ JPY</a></li>
-                                </ul>
-                            </div>
+                                <form action="{{url("/search")}}" method="post">
+                                    @method("POST")
+                                    @csrf
+                                    <div class="from-group">
+                                        <input type="text" name="search" class="form-control"/>
+                                    </div>
+                                </form>
                         </div>
                         <div class="header-cart">
                             <a href="#">
@@ -166,6 +159,18 @@
                                     <a href="checkout.html">checkout</a>
                                 </div>
                             </div>
+                        </div>
+                    </div>
+                    <div class="logout-button">
+                        <div class="logout-icon">
+                            <a class="dropdown-item" href="{{ route('logout') }}"
+                               onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                <li class="ion-log-out float-right">LogOut</li>
+                            </a>
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                @csrf
+                            </form>
                         </div>
                     </div>
                 </div>

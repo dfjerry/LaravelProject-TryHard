@@ -49,7 +49,6 @@
                             <div class="product-grid product-view pb-20">
                                 <div class="row">
                                     @forelse($products as $p)
-
                                         <div class="product-width col-xl-4 col-lg-4 col-md-4 col-sm-6 col-12 mb-30">
                                             <div class="product-wrapper">
                                                 <div class="product-img">

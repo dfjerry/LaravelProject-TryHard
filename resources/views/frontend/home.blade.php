@@ -27,14 +27,20 @@
     <!-- Product Area Start -->
     <div class="product-area bg-image-1 pt-100 pb-95">
         <div class="container">
+            <div class="product-top-bar section-border mb-55">
+                <div class="section-title-wrap text-center">
+                    <h3 class="section-title">Most Viewer Products</h3>
+                </div>
+            </div>
             <div class="featured-product-active hot-flower owl-carousel product-nav">
-                @foreach($categories as $cat)
+                @foreach($most_viewer as $mow)
                     <div class="product-wrapper">
                         <div class="product-img">
-                            <a href="{{$cat->getCategoryUrl()}}">
-                                <img alt="" src="{{$cat->getImage()}}">
+                            <a href="{{$mow->getProductUrl()}}">
+                                <img alt="" src="{{$mow->getImage()}}">
                             </a>
                             <span>-20%</span>
+                            <span style="left: 210px">View:{{$mow->__get("view_count")}}</span>
                             <div class="product-action">
                                 <a class="action-wishlist" href="#" title="Wishlist">
                                     <i class="ion-android-favorite-outline"></i>
@@ -51,15 +57,15 @@
                             <div class="product-hover-style">
                                 <div class="product-title">
                                     <h4>
-                                        <a href="{{$cat->getCategoryUrl()}}">{{$cat->__get("category_name")}}</a>
+                                        <a href="{{$mow->getProductUrl()}}">{{$mow->__get("product_name")}}</a>
                                     </h4>
                                 </div>
                                 <div class="cart-hover">
-                                    <h4><a href="{{$cat->getCategoryUrl()}}">+ Add to cart</a></h4>
+                                    <h4>View Count : <a href="#">{{$mow->__get("view_count")}}</a></h4>
                                 </div>
                             </div>
                             <div class="product-price-wrapper">
-                                <span>$100.00 -</span>
+                                <span>${{$mow->__get("price")}} -</span>
                                 <span class="product-price-old">$120.00 </span>
                             </div>
                         </div>
@@ -128,7 +134,7 @@
                                             <a class="action-cart" href="#" title="Add To Cart">
                                                 <i class="ion-ios-shuffle-strong"></i>
                                             </a>
-                                            <a class="action-compare" href="#" data-target="#exampleModal" data-toggle="modal" title="Quick View">
+                                            <a class="action-compare" href="#" data-target="#examplemModal" data-toggle="modal" title="Quick View">
                                                 <i class="ion-ios-search-strong"></i>
                                             </a>
                                         </div>
