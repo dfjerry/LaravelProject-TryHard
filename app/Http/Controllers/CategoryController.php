@@ -4,20 +4,25 @@ namespace App\Http\Controllers;
 
 use App\Category;
 use App\Http\Controllers\Controller;
+use App\Repositories\CategoryRepository;
 use Illuminate\Http\Request;
 
 class CategoryController extends Controller
 {
-    //Category Controller
+    //CategoryRepository Controller
+    protected $categoryRepository; // tạo biến repository để gọi ra thay cho model
+    // gọi vào contructor
+    public function __construct(CategoryRepository $categoryRepository)
+    {
+        $this->categoryRepository = $categoryRepository;
+    }
+
     public function listCategory()
     {
-        //lay tat ca
-        $category = Category::withCount("Products")->paginate(20);
-        //show validation theo ten D%
-        //  $category =Category::where ("category_name", "LIKE", "D%")->get();
-        return view("category.list", [
-            "categories" => $category]);
-        //
+        $category = $this->categoryRepository->getPaginate(8);
+        return view("category.list",[
+            "categories" => $category,
+        ]);
     }
 
     public function newCategory()
@@ -27,7 +32,7 @@ class CategoryController extends Controller
 
     public function saveCategory(Request $request)
     {
-        //validate du lieu
+        //validate
         $request->validate([
             "category_name" => "required|string|min:6|unique:categories"
         ]);
@@ -48,10 +53,10 @@ class CategoryController extends Controller
                 }
             }
 //tự động cập nhật thời gian cho category
-            Category::create([
-                "category_name" => $request->get("category_name"),
-                "category_image" =>$categoryImage
-            ]);
+      $this->categoryRepository->create([
+          "category_name" => $request->get("category_name"),
+          "category_image" =>$categoryImage
+      ]);
 
             // "updated_at"=>Carbon::now(),
             //            DB::table("categories") ->insert([
@@ -66,7 +71,7 @@ class CategoryController extends Controller
 
     public function editCategory($id)
     {
-        $category = Category::findOrFail($id);
+        $category = $this->categoryRepository->find($id);
 //        if (is_null($category))
 //            abort(404); =findOrFail
         return view("category.edit", ["category" => $category]);
@@ -74,7 +79,7 @@ class CategoryController extends Controller
 
     public function updateCategory($id, Request $request)
     {
-        $category = Category::findOrFail($id);
+        $category = $this->categoryRepository->find($id);
         $request->validate([
             "category_name" => "required|min:6|unique:categories,category_name,{$id}"
         ]);
@@ -97,12 +102,11 @@ class CategoryController extends Controller
 //                    dd($brandImage);
                 }
             }
-            $category->update([
+            $category->update($id,[
                 "category_name" => $request->get("category_name"),
                 "category_image" =>$categoryImage
             ]);
         } catch (\Exception $exception) {
-            dd($exception->getMessage());
             return redirect()->back();
         }
         return redirect()->to("/admin/list-category");
@@ -110,9 +114,8 @@ class CategoryController extends Controller
 
     public function deleteCategory($id)
     {
-        $category = Category::findOrFail($id);
         try {
-            $category->delete();
+            $this->categoryRepository->delete($id);
         } catch (\Exception $exception) {
             return redirect()->back();
         }

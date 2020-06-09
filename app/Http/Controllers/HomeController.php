@@ -28,7 +28,7 @@ class HomeController extends Controller
     {
 
         //Tạo slug Categories
-//         $category = Category::all();
+//         $category = CategoryRepository::all();
 //        foreach ($category as $p){
 //            $slug = \Illuminate\Support\Str::slug($p->__get("category_name"));
 //            $p->slug = $slug.$p->__get("id");// luu lai vao DB
@@ -68,7 +68,7 @@ class HomeController extends Controller
             $product->increment("view_count");     // tự tăng lên 1 mỗi lần user ấn vào xem sản phẩm
             session(["view_count{$product->__get("id")} => true"]);// lấy session ra 1 session sẽ có giá trị lưu giữ trong vòng 2 tiếng
         }
-        $relativeProducts = Product::with("Category")->paginate(4);//nạp sẵn phần cần nạp trong collection, lấy theo kiểu quan hệ
+        $relativeProducts = Product::with("CategoryRepository")->paginate(4);//nạp sẵn phần cần nạp trong collection, lấy theo kiểu quan hệ
         return view("frontend.product", [
             "product"=>$product,
             "relativeProduct"=>$relativeProducts,
