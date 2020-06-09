@@ -5,18 +5,28 @@ namespace App\Http\Controllers;
 use App\Category;
 use App\Http\Controllers\Controller;
 use App\Product;
+use App\Repositories\CategoryRepository;
+use App\Repositories\ProductRepository;
 use Illuminate\Http\Request;
 
 class ProductController extends Controller
 {
+    protected $productRepository;
+    protected $categoryRepository;
+    public function __construct(ProductRepository $productRepository,CategoryRepository $categoryRepository)
+    {
+        $this->productRepository = $productRepository;
+        $this->categoryRepository = $categoryRepository;
+    }
+
     //product Controller
     public function listProduct(){
-        $product = Product::with("Category")->paginate(20);//nạp sẵn phần cần nạp trong collection
+        $product = $this->productRepository->getPaginate(9);
         return view("product.list",["products"=>$product]); // string la mang cac product bien duoc gui sang lam bien dau tien cua forech
     }
     public function newProduct(){
         // phai lay du lieu tu cac bang phu
-        $category = Category::all();
+        $category = $this->categoryRepository->getAll();
         return view("product.new",[
                 "categories"=>$category
             ]
@@ -50,7 +60,7 @@ class ProductController extends Controller
                     $productImage = "media/products/".$fileName;
                 }
             }
-            Product::create([
+            $this->productRepository->create([
                 "product_name"=>$request->get("product_name"),
                 "product_image"=>$productImage,
                 "product_desc"=>$request->get("product_desc"),
@@ -65,14 +75,14 @@ class ProductController extends Controller
     }
 
     public function editProduct($id){
-        $category = Category::all();
-        $product = Product::findOrFail($id);
+        $category = $this->categoryRepository->getAll();
+        $product = $this->productRepository->find($id);
         return view("product.edit",[
             "categories"=>$category,
             "product" => $product]);
     }
     public function updateProduct($id,Request $request){
-        $products = Product::findOrFail($id);
+        $products = $this->productRepository->find($id);
         $request->validate([
             "product_name"=>"required|min:3|unique:products,product_name,($id)",
             "product_desc"=>"required",
@@ -98,23 +108,22 @@ class ProductController extends Controller
                     $productImage = "media/products/".$fileName;
                 }
             }
-            $products->update([
-                "product_name"=>$request->get("product_name"),
-                "product_image"=>$productImage,
-                "product_desc"=>$request->get("product_desc"),
-                "price"=>$request->get("price"),
-                "qty"=>$request->get("qty"),
-                "category_id"=>$request->get("category_id"),
-            ]);
+       $this->productRepository->update($id,[
+           "product_name"=>$request->get("product_name"),
+           "product_image"=>$productImage,
+           "product_desc"=>$request->get("product_desc"),
+           "price"=>$request->get("price"),
+           "qty"=>$request->get("qty"),
+           "category_id"=>$request->get("category_id"),
+       ]);
         }catch (\Exception $exception){
             return redirect()->back();
         }
         return redirect()->to("admin/list-product");
     }
     public function deleteProduct($id){
-        $products = Product::findorFail($id);
         try {
-            $products->delete();
+           $this->productRepository->delete($id);
         }catch (\Exception $exception){
             return redirect()->back();
         }

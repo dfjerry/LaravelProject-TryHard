@@ -1,6 +1,6 @@
 @extends("layout")
-@section("title", "New Category Listing")
-@section("contentHeader", "New Category")
+@section("title", "New CategoryRepository Listing")
+@section("contentHeader", "New CategoryRepository")
 @section("content")
     <div class="card card-primary mt-4">
         <div class="card-header">

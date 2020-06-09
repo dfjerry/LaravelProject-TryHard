@@ -12,7 +12,7 @@ class DistributorController extends Controller
         //lay tat ca
         $distributor = Distributor::paginate(20);
         //show validation theo ten D%
-        //  $category =Category::where ("category_name", "LIKE", "D%")->get();
+        //  $category =CategoryRepository::where ("category_name", "LIKE", "D%")->get();
         return view("distributor.list", ["distributors" => $distributor]);
         //
     }
