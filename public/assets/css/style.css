@@ -1,12 +1,12 @@
 /*-----------------------------------------------------------------------------------
-    
+
     Template Name: Phuler - Flower eCommerce Bootstrap4 Template
     Version: 1.2
-    
+
 -----------------------------------------------------------------------------------
-    
-    [Table of contents] 
-	
+
+    [Table of contents]
+
     1. Template default css
     2. Index page style
     3. Shop grid style
@@ -21,7 +21,7 @@
     12. Blog details
     13. About us
     14. Testimonial page
-    
+
 -----------------------------------------------------------------------------------*/
 
 
@@ -53,6 +53,7 @@ a,
     border-radius: 0px;
     font-size: 14px;
     padding: 0px 15px;
+    margin-top: 30px;
     height: 30px;
     line-height: 30px;
 }
@@ -236,7 +237,7 @@ textarea {
 input {
     background: #eceff8;
     border: 2px solid #eceff8;
-    height: 45px;
+    height: 35px;
     box-shadow: none;
     padding-left: 10px;
     font-size: 14px;
@@ -1143,7 +1144,7 @@ textarea:focus {
 }
 
 /***************************
-    Page section padding 
+    Page section padding
 ****************************/
 
 .ptb-0 {
@@ -1261,7 +1262,7 @@ textarea:focus {
 
 
 /***************************
-    Page section margin 
+    Page section margin
 ****************************/
 
 .mtb-0 {
@@ -1320,7 +1321,7 @@ textarea:focus {
 }
 
 /*************************************
-    Background variation set 
+    Background variation set
  **************************************/
 
 /*colored background*/
@@ -5416,11 +5417,11 @@ h4.section-title-about::before {
 .wrapper-boxed-layout {
   margin: 0 90px;
   width: calc(100% - 180px);
-  overflow-x: hidden; 
+  overflow-x: hidden;
 }
 .wrapper-boxed-layout .header-menu {
     width: calc(100% - 200px);
-    left: 100px; 
+    left: 100px;
 }
 .wrapper-boxed-layout header.header__absolute {
   left: 30px;
@@ -5433,43 +5434,43 @@ h4.section-title-about::before {
 }
 .wrapper-boxed-layout .header-menu {
 	width: calc(100% - 140px);
-	left: 70px; 
+	left: 70px;
 }
 }
 
 @media only screen and (min-width: 1200px) and (max-width: 1600px) {
 .wrapper-boxed-layout {
 	margin: 0 50px;
-	width: calc(100% - 100px); 
+	width: calc(100% - 100px);
 }
 .wrapper-boxed-layout .container {
 	max-width: 1100px;
 }
 .wrapper.wrapper-boxed-layout .header-menu {
 	width: calc(100% - 100px);
-	left: 50px; 
-} 
+	left: 50px;
+}
 }
 
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
 .wrapper-boxed-layout {
 	margin: 0 30px;
-	width: calc(100% - 60px); 
+	width: calc(100% - 60px);
 }
 .wrapper-boxed-layout .header-menu {
 	width: calc(100% - 60px);
-	left: 30px; 
-}	  
+	left: 30px;
+}
 }
 @media only screen and (min-width: 768px) and (max-width: 991px) {
 .wrapper-boxed-layout {
 	margin: 0 30px;
-	width: calc(100% - 60px); 
+	width: calc(100% - 60px);
 }
 .wrapper-boxed-layout .header-menu {
 	width: calc(100%);
-	left: 0; 
-} 
+	left: 0;
+}
 }
 
 @media only screen and (max-width: 767px) {
@@ -5480,7 +5481,7 @@ h4.section-title-about::before {
 .wrapper-boxed-layout .header-menu {
 	width: calc(91%);
 	left: 14px;
-} 
+}
 .maincontent {
   padding-bottom: 80px;
 }

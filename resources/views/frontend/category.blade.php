@@ -6,7 +6,7 @@
             <div class="breadcrumb-content text-center">
                 <h3>CATEGORY</h3>
                 <ul>
-                    <li><a href="index.html">Home</a></li>
+                    <li><a href="{{url("/")}}">Home</a></li>
                     <li class="active">{{$category->__get("category_name")}}</li>
                 </ul>
             </div>

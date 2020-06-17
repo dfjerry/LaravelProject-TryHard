@@ -10,7 +10,7 @@
                             </div>
                             <div class="footer-content">
                                 <ul>
-                                    <li><a href="my-account.html">My Account</a></li>
+                                    <li><a href="{{url("/myaccount")}}">My Account</a></li>
                                     <li><a href="about-us.html">Order History</a></li>
                                     <li><a href="wishlist.html">WishList</a></li>
                                     <li><a href="#">Newsletter</a></li>
@@ -27,7 +27,7 @@
                             </div>
                             <div class="footer-content">
                                 <ul>
-                                    <li><a href="about-us.html">About Us</a></li>
+                                    <li><a href="{{url("/about")}}">About Us</a></li>
                                     <li><a href="#">Delivery Information</a></li>
                                     <li><a href="#">Privacy Policy</a></li>
                                     <li><a href="#">Terms & Conditions</a></li>

@@ -19,7 +19,7 @@
             <div class="row">
                 <div class="col-lg-6 col-md-12">
                     <div class="product-details-img">
-                        <img class="zoompro" src="{{$product->getImage()}}" data-zoom-image="assets/img/product-details/product-detalis-bl1.jpg" alt="zoom"/>
+                        <img class="zoompro" src="{{$product   ->getImage()}}" data-zoom-image="assets/img/product-details/product-detalis-bl1.jpg" alt="zoom"/>
                         <div id="gallery" class="mt-20 product-dec-slider owl-carousel">
                             <a data-image="assets/img/product-details/product-detalis-l1.jpg" data-zoom-image="assets/img/product-details/product-detalis-bl1.jpg">
                                 <img src="assets/img/product-details/product-detalis-s1.jpg" alt="">

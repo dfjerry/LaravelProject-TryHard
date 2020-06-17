@@ -61,7 +61,7 @@
                                     </h4>
                                 </div>
                                 <div class="cart-hover">
-                                    <h4>View Count : <a href="#">{{$mow->__get("view_count")}}</a></h4>
+                                    <h4><a href="product-details.html">+ Add to cart</a></h4>
                                 </div>
                             </div>
                             <div class="product-price-wrapper">
@@ -126,7 +126,8 @@
                                         <a href="{{$p->getProductUrl()}}">
                                             <img alt="" src="{{$p->getImage()}}">
                                         </a>
-                                        <span>-30%</span>
+                                        <span>-20%</span>
+                                        <span style="left: 210px">View:{{$mow->__get("view_count")}}</span>
                                         <div class="product-action">
                                             <a class="action-wishlist" href="#" title="Wishlist">
                                                 <i class="ion-android-favorite-outline"></i>
