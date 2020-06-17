@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\Category;
 use App\Product;
 use Illuminate\Http\Request;
-use Illuminate\Database\Eloquent\Collection;
 
 class HomeController extends Controller
 {
@@ -28,7 +27,7 @@ class HomeController extends Controller
     {
 
         //Tạo slug Categories
-//         $category = Category::all();
+         $category = Category::all();
 //        foreach ($category as $p){
 //            $slug = \Illuminate\Support\Str::slug($p->__get("category_name"));
 //            $p->slug = $slug.$p->__get("id");// luu lai vao DB
