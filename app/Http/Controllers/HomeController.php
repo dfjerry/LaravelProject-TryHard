@@ -74,6 +74,7 @@ class HomeController extends Controller
             "relativeProduct"=>$relativeProducts,
         ]);
     }
+    ///asdsad
     public function postSearch(Request $request){
         $searchProducts = Product::where("product_name","like","%".$request->search."%");
         return view("frontend.search",[
