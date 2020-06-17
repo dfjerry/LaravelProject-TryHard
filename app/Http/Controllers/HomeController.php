@@ -83,6 +83,7 @@ class HomeController extends Controller
         return view("frontend.search", [
             "searchProducts" => $searchProducts,
         ]);
+        //comemnt
     }
 public function about(Request $request){
         return view("frontend.about");
