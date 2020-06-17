@@ -79,6 +79,7 @@ class HomeController extends Controller
         return view("frontend.search",[
             "searchProducts" => $searchProducts,
         ]);
+        //comemnt
     }
 
 }
