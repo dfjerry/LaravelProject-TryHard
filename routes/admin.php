@@ -1,6 +1,6 @@
 <?php
 Route::get('/', "WebController@dashBoard");
-//Category Router
+//CategoryRepository Router
 Route::get("/list-category","CategoryController@listCategory");
 Route::get("/new-category","CategoryController@newCategory");
 Route::post("/save-category","CategoryController@saveCategory");

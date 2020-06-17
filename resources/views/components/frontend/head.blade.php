@@ -19,5 +19,6 @@
     <link rel="stylesheet" href="{{asset("assets/css/jquery-ui.css")}}">
     <link rel="stylesheet" href="{{asset("assets/css/meanmenu.min.css")}}">
     <link rel="stylesheet" href="{{asset("assets/css/style.css")}}">
+    <link rel="stylesheet" href="{{asset("assets/css/bootstrap/search.css")}}">
     <link rel="stylesheet" href="{{asset("assets/css/responsive.css")}}">
     <script src="{{asset("assets/js/vendor/modernizr-2.8.3.min.js")}}"></script>

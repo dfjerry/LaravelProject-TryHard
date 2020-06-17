@@ -81,5 +81,13 @@ class HomeController extends Controller
             "searchProducts" => $searchProducts,
         ]);
     }
-
+    public function about(Request $request){
+        return view("frontend.about");
+    }
+    public function contact(Request $request){
+        return view("frontend.contact");
+    }
+    public function myaccount(Request $request){
+        return view("frontend.myaccount");
+    }
 }

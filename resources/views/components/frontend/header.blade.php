@@ -10,110 +10,42 @@
                         </a>
                     </div>
                 </div>
-                <div class="col-lg-10 col-md-7 col-8">
+                <div class="col-lg-8 col-md-6 col-7">
                     <div class="header-bottom-right">
                         <div class="main-menu">
                             <nav>
                                 <ul>
-                                    <li class="top-hover"><a href="/home">home</a>
+                                    <li class="top-hover col-lg-2"><a href="/home">home</a>
                                     </li>
-                                    <li><a href="#">about</a></li>
+
                                     <li class="mega-menu-position top-hover"><a href="#">shop</a>
                                         <ul class="mega-menu">
                                             <li>
                                                 <ul>
-                                                    <li class="mega-menu-title">Categories 01</li>
-                                                    <li><a href="shop.html">Aconite</a></li>
-                                                    <li><a href="shop.html">Ageratum</a></li>
-                                                    <li><a href="shop.html">Allium</a></li>
-                                                    <li><a href="shop.html">Anemone</a></li>
-                                                    <li><a href="shop.html">Angelica</a></li>
-                                                    <li><a href="shop.html">Angelonia</a></li>
-                                                </ul>
-                                            </li>
-                                            <li>
-                                                <ul>
-                                                    <li class="mega-menu-title">Categories 02</li>
-                                                    <li><a href="shop.html">Balsam</a></li>
-                                                    <li><a href="shop.html">Baneberry</a></li>
-                                                    <li><a href="shop.html">Bee Balm</a></li>
-                                                    <li><a href="shop.html">Begonia</a></li>
-                                                    <li><a href="shop.html">Bellflower</a></li>
-                                                    <li><a href="shop.html">Bergenia</a></li>
-                                                </ul>
-                                            </li>
-                                            <li>
-                                                <ul>
-                                                    <li class="mega-menu-title">Categories 03</li>
-                                                    <li><a href="shop.html">Caladium</a></li>
-                                                    <li><a href="shop.html">Calendula</a></li>
-                                                    <li><a href="shop.html">Carnation</a></li>
-                                                    <li><a href="shop.html">Catmint</a></li>
-                                                    <li><a href="shop.html">Celosia</a></li>
-                                                    <li><a href="shop.html">Chives</a></li>
-                                                </ul>
-                                            </li>
-                                            <li>
-                                                <ul>
-                                                    <li class="mega-menu-title">Categories 04</li>
-                                                    <li><a href="shop.html">Daffodil</a></li>
-                                                    <li><a href="shop.html">Dahlia</a></li>
-                                                    <li><a href="shop.html">Daisy</a></li>
-                                                    <li><a href="shop.html">Diascia</a></li>
-                                                    <li><a href="shop.html">Dusty Miller</a></li>
-                                                    <li><a href="shop.html">Dame’s Rocket</a></li>
+                                                    <li class="mega-menu-title"></li>
+                                                    <li><a href="shop.html"></a></li>
+
                                                 </ul>
                                             </li>
                                         </ul>
                                     </li>
-                                    <li class="top-hover"><a href="blog-left-sidebar.html">blog</a>
-                                        <ul class="submenu">
-                                            <li><a href="blog-masonry.html">Blog Masonry</a></li>
-                                            <li><a href="#">Blog Standard <span><i class="ion-ios-arrow-right"></i></span></a>
-                                                <ul class="lavel-menu">
-                                                    <li><a href="blog-left-sidebar.html">left sidebar</a></li>
-                                                    <li><a href="blog-right-sidebar.html">right sidebar</a></li>
-                                                    <li><a href="blog-no-sidebar.html">no sidebar</a></li>
-                                                </ul>
-                                            </li>
-                                            <li><a href="#">Post Types <span><i class="ion-ios-arrow-right"></i></span> </a>
-                                                <ul class="lavel-menu">
-                                                    <li><a href="blog-details-standerd.html">Standard post</a></li>
-                                                    <li><a href="blog-details-audio.html">audio post</a></li>
-                                                    <li><a href="blog-details-video.html">video post</a></li>
-                                                    <li><a href="blog-details-gallery.html">gallery post</a></li>
-                                                    <li><a href="blog-details-link.html">link post</a></li>
-                                                    <li><a href="blog-details-quote.html">quote post</a></li>
-                                                </ul>
-                                            </li>
-                                        </ul>
+                                    <li class="col-lg-2"><a href="{{url("/about")}}">about</a></li>
+                                    <li class="col-lg-2"><a href="{{url("/contact")}}">contact</a></li>
+                                    <li class="col-lg-4">
+                                        <div class="header-bottom ">
+                                            <div class="header">
+                                                <form action="{{url("/search")}}" method="post">
+                                                    @method("POST")
+                                                    @csrf
+                                                    <div class="md-form active-pink-2 mb-3">
+                                                        <input class="form-control"  name="search" type="text" placeholder="Search" aria-label="Search">
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
                                     </li>
-                                    <li class="top-hover"><a href="#">pages</a>
-                                        <ul class="submenu">
-                                            <li><a href="about-us.html">about us </a></li>
-                                            <li><a href="shop.html">shop Grid</a></li>
-                                            <li><a href="shop-list.html">shop list</a></li>
-                                            <li><a href="product-details.html">product details</a></li>
-                                            <li><a href="cart-page.html">cart page</a></li>
-                                            <li><a href="checkout.html">checkout</a></li>
-                                            <li><a href="wishlist.html">wishlist</a></li>
-                                            <li><a href="my-account.html">my account</a></li>
-                                            <li><a href="login-register.html">login / register</a></li>
-                                            <li><a href="contact.html">contact</a></li>
-                                        </ul>
-                                    </li>
-                                    <li><a href="contact.html">contact</a></li>
                                 </ul>
                             </nav>
-                        </div>
-                        <div class="header-currency">
-                                <form action="{{url("/search")}}" method="post">
-                                    @method("POST")
-                                    @csrf
-                                    <div class="from-group">
-                                        <input type="text" name="search" class="form-control"/>
-                                    </div>
-                                </form>
                         </div>
                         <div class="header-cart">
                             <a href="#">
@@ -161,17 +93,17 @@
                             </div>
                         </div>
                     </div>
-                    <div class="logout-button">
-                        <div class="logout-icon">
-                            <a class="dropdown-item" href="{{ route('logout') }}"
-                               onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                <li class="ion-log-out float-right">LogOut</li>
-                            </a>
-                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                @csrf
-                            </form>
-                        </div>
+                </div>
+                <div class="logout-button col-lg-2">
+                    <div class="logout">
+                        <a class="dropdown-item" href="{{ route('logout') }}"
+                           onclick="event.preventDefault();
+                            document.getElementById('logout-form').submit();">
+                            <li class="float-right" style="list-style: none"><button style="border-radius: 20px" type="button" class="btn btn-secondary">LogOut</button></li>
+                        </a>
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                            @csrf
+                        </form>
                     </div>
                 </div>
             </div>
