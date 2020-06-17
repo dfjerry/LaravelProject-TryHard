@@ -1,6 +1,6 @@
 @extends("layout")
-@section("title", "Category List")
-@section("contentHeader", "Category List")
+@section("title", "CategoryRepository List")
+@section("contentHeader", "CategoryRepository List")
 @section("content")
     <div class="row mt-4">
         <div class="col">
@@ -72,4 +72,5 @@
             </div>
         </div>
     </div>
+    {!! $categories->links() !!}
 @endsection

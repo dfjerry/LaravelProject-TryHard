@@ -1,6 +1,6 @@
 @extends("layout")
-@section("title", "Update Category List")
-@section("contentHeader", "Update Category")
+@section("title", "Update CategoryRepository List")
+@section("contentHeader", "Update CategoryRepository")
 @section("content")
     <div class="row mt-4">
         <div class="col">
