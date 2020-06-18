@@ -16,8 +16,7 @@
         @yield("content")
         <x-footer/>
     </div>
-
 </div>
 </body>
-<x-scripts/>
+    <x-scripts/>
 </html>
