@@ -76,7 +76,8 @@ class HomeController extends Controller
     }
     ///asdsad
     public function postSearch(Request $request){
-        $searchProducts = Product::where("product_name","like","%".$request->search."%");
+        $searchProducts = Product::where('product_name', 'like', '%'.$request->search.'%')
+                                    ->orwhere('price', $request->search)->get();
         return view("frontend.search",[
             "searchProducts" => $searchProducts,
         ]);

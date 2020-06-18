@@ -97,7 +97,6 @@
 
                             </div>
                         </div>
-                        {!! $searchProducts->links() !!}
                     </div>
                 </div>
             </div>
