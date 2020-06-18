@@ -38,7 +38,8 @@
                                                     @method("POST")
                                                     @csrf
                                                     <div class="md-form active-pink-2 mb-3">
-                                                        <input class="form-control"  name="search" type="text" placeholder="Search" aria-label="Search">
+                                                        <input class="search" id="search" name="search" type="text" placeholder="Search"/>
+                                                        <button class="button__search" type="submit"><i class="fas fa-search"></i></button>
                                                     </div>
                                                 </form>
                                             </div>
@@ -92,6 +93,7 @@
                                 </div>
                             </div>
                         </div>
+
                     </div>
                 </div>
                 <div class="logout-button col-lg-2">
@@ -106,6 +108,20 @@
                         </form>
                     </div>
                 </div>
+            </div>
+            <div class="table__search">
+                <table class="table table-borderless table-striped">
+                    <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Image</th>
+                        <th>Price</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+
+                    </tbody>
+                </table>
             </div>
             <div class="mobile-menu-area">
                 <div class="mobile-menu">
@@ -205,4 +221,6 @@
         </div>
     </div>
 </header>
+
+
 <!-- header end -->
