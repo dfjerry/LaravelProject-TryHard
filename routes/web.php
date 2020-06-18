@@ -24,5 +24,5 @@ Route::group(["middleware"=>["admin","auth"],"prefix"=>"admin"],function(){
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/home', 'HomeController@index')->name('home');
+
 

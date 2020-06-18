@@ -1,0 +1,27 @@
+.main-menu{
+    position: relative;
+}
+.table__search{
+    display: none;
+    z-index: 10;
+    position: absolute;
+    top: 65px;
+    left: 910px;
+    width: 350px;
+    background-color: gainsboro;
+    border-radius: 8px;
+}
+.search{
+    background-color: white;
+    border-radius: 10px;
+}
+.table__search input{
+    position: relative;
+}
+.button__search{
+    position: absolute;
+    left: 172px;
+    top: 6px;
+    border: none;
+    background-color: white;
+}

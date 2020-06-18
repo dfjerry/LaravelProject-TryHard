@@ -12,7 +12,7 @@ Route::get("/product/{product:slug}", "HomeController@product");
 
 
 Route::get('/', 'WebController@index');
-
+Route::get('/search', "FeatureAjaxController@getSearch");
 Route::post('/search', "HomeController@postSearch");
 //Route::get('/model/{id}
 Route::get("/about", "HomeController@about");
