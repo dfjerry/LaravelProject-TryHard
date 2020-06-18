@@ -15,7 +15,7 @@
                         <div class="main-menu">
                             <nav>
                                 <ul>
-                                    <li class="top-hover col-lg-2"><a href="/home">home</a>
+                                    <li class="top-hover col-lg-2"><a href="{{url("/home")}}">home</a>
                                     </li>
 
                                     <li class="mega-menu-position top-hover"><a href="#">shop</a>
@@ -51,44 +51,51 @@
                             <a href="#">
                                 <div class="cart-icon">
                                     <i class="ti-shopping-cart"></i>
+                                    @php
+                                        $myCart = session()->has("my_cart")?session("my_cart"):[];
+                                        $count_item  = count($myCart);
+                                        $productIds = [];
+                                        foreach ($myCart as $item){
+                                            $productIds[] = $item["product_id"];
+                                        }
+                                        $grandTotal = 0;
+                                        $products = \App\Product::find($productIds);
+                                        foreach ($products as $p){
+                                            foreach ($myCart as $item){
+                                                if($p->__get("id") == $item["product_id"])
+                                                    $grandTotal += ($p->__get("price")*$item["qty"]);
+                                            }
+                                        }
+                                    @endphp
                                 </div>
                             </a>
                             <div class="shopping-cart-content">
+                                @foreach($products as $p)
                                 <ul>
                                     <li class="single-shopping-cart">
                                         <div class="shopping-cart-img">
-                                            <a href="#"><img alt="" src="assets/img/cart/cart-1.jpg"></a>
+                                            <a href="#"><img style="width: 70px; height: 70px " src="{{$p->getImage()}} "></a>
                                         </div>
                                         <div class="shopping-cart-title">
-                                            <h4><a href="#">Phantom Remote </a></h4>
-                                            <h6>Qty: 02</h6>
-                                            <span>$260.00</span>
-                                        </div>
-                                        <div class="shopping-cart-delete">
-                                            <a href="#"><i class="ion ion-close"></i></a>
-                                        </div>
-                                    </li>
-                                    <li class="single-shopping-cart">
-                                        <div class="shopping-cart-img">
-                                            <a href="#"><img alt="" src="assets/img/cart/cart-2.jpg"></a>
-                                        </div>
-                                        <div class="shopping-cart-title">
-                                            <h4><a href="#">Phantom Remote</a></h4>
-                                            <h6>Qty: 02</h6>
-                                            <span>$260.00</span>
+                                            <p><a href="#">{{$p->__get("product_name")}}</a></p>
+
+                                            <p>Qty:<span>{{$p->__get("qty")}}</span> </p>
+{{--                                            <span class="cart-plus-minus-box" type="text" value="" name="qtybutton"></span>--}}
+
+                                            <span >Price: {{$p->getPrice()}}</span>
                                         </div>
                                         <div class="shopping-cart-delete">
                                             <a href="#"><i class="ion ion-close"></i></a>
                                         </div>
                                     </li>
                                 </ul>
+                                @endforeach
                                 <div class="shopping-cart-total">
-                                    <h4>Shipping : <span>$20.00</span></h4>
-                                    <h4>Total : <span class="shop-total">$260.00</span></h4>
+                                    <h4>Total : <span class="shop-total">{{$grandTotal}} </span></h4>
                                 </div>
                                 <div class="shopping-cart-btn">
-                                    <a href="cart-page.html">view cart</a>
-                                    <a href="checkout.html">checkout</a>
+                                    <a href="{{url("/shopping-cart")}}">view cart</a>
+                                    <a href="{{url("/checkout")}}">checkout</a>
                                 </div>
                             </div>
                         </div>
