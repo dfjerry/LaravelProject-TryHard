@@ -61,11 +61,11 @@
                                     </h4>
                                 </div>
                                 <div class="cart-hover">
-                                    <h4><a href="product-details.html">+ Add to cart</a></h4>
+                                    <h4><a href="#"> + Add to cart</a></h4>
                                 </div>
                             </div>
                             <div class="product-price-wrapper">
-                                <span>${{$mow->__get("price")}} -</span>
+                                <span>${{$mow->__get("price")}}</span>
                                 <span class="product-price-old">$120.00 </span>
                             </div>
                         </div>
@@ -148,7 +148,7 @@
                                                 </h4>
                                             </div>
                                             <div class="cart-hover">
-                                                <h4><a href="product-details.html">+ Add to cart</a></h4>
+                                                <h4><a href="#" onclick="addToCart({{$p->__get("id")}})" >+ Add to cart</a></h4>
                                             </div>
                                         </div>
                                         <div class="product-price-wrapper">
