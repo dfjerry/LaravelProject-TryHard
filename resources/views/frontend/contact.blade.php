@@ -60,14 +60,14 @@
                         <div class="col-lg-12 col-md-12">
                             <div class="contact-information mb-30">
                                 <h4>Our Address</h4>
-                                <p>House. 9, Road. 12, Widgets. Orled. Sydney. Milaro.</p>
+                                <p>No 8, Ton That Thuyet, My Dinh, Ha Noi</p>
                             </div>
                         </div>
                         <div class="col-lg-12 col-md-12">
                             <div class="contact-information contact-mrg mb-30">
                                 <h4>Phone Number</h4>
                                 <p>
-                                    <a href="tel:01234567890">01234 567 890</a>
+                                    <a href="tel:01234567890">099 999 999</a>
                                     <a href="tel:01234567891">01234 567 891</a>
                                 </p>
                             </div>
@@ -76,8 +76,8 @@
                             <div class="contact-information contact-mrg mb-30">
                                 <h4>Web Address</h4>
                                 <p>
-                                    <a href="mailto:info@example.com">info@example.com</a>
-                                    <a href="#">www.example.com</a>
+                                    <a href="mailto:info@example.com">Try_hard@gmail.com</a>
+                                    <a href="#">Try_hard.example.com</a>
                                 </p>
                             </div>
                         </div>
