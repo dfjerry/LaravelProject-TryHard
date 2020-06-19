@@ -35,7 +35,21 @@
         $(".table__search").css('display', 'none');
     });
 </script>
-
+<script type="text/javascript">
+    function addToCart(productId) {
+        $.ajax({
+            url:"{{url("/cart/add")}}/"+productId,
+            method: "POST",
+            data: {
+                qty:1,
+                _token:"{{@csrf_token()}}"
+            },
+            success: function () {
+                alertify.success("Add product to cart successfully");
+            }
+        });
+    }
+</script>
 
 <script type="text/javascript">
     function addToCart(productId) {
