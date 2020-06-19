@@ -9,6 +9,7 @@ use App\Order;
 use App\Product;
 use App\User;
 use Illuminate\Http\Request;
+
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -226,12 +227,12 @@ class HomeController extends Controller
             $currentUser = Auth::user();
             $order = Order::where("user_id", Auth::id())->firstOrFail();
             Mail::send('mail.checkout-form',["cart" => $cart->getItems,"user" => $currentUser,"order" => $order],function ($message){
-                $message->to(Auth::user()->__get("email"),Auth::user()->__get("name"))->subject('TeaCozy Đơn Hàng Khách Hàng'.Auth::user()->__get("name"));
+                $message->to(Auth::user()->__get("email"),Auth::user()->__get("name"))->subject('TeaCozy Đơn Hàng Khách Hàng '.Auth::user()->__get("name"));
             });
             event(new OrderCreated($order));
         } catch (\Exception $exception) {
 
         }
-//        return redirect()->to("/home");
+        return redirect()->to("/home");
     }
 }
