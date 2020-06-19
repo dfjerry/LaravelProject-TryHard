@@ -226,6 +226,6 @@ class HomeController extends Controller
         } catch (\Exception $exception) {
 
         }
-        return redirect()->to("/home");
+//        return redirect()->to("/home");
     }
 }
