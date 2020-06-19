@@ -8,5 +8,32 @@
 <script src="{{asset("assets/js/owl.carousel.min.js")}}"></script>
 <script src="{{asset("assets/js/plugins.js")}}"></script>
 <script src="{{asset("assets/js/main.js")}}"></script>
+<script src="{{asset("assets/js/search.js")}}"></script>
+<script type="text/javascript">
+    $('#search').on('keyup',function(){
+        $value = $(this).val();
+        $.ajax({
+            type: 'get',
+            url: '{{ \Illuminate\Support\Facades\URL::to('search') }}',
+            data: {
+                'search': $value
+            },
+            success:function(data){
+                if($value===""){
+                    return $('tbody').html("");
+                }else{
+                    return $('tbody').html(data);
+                }
+            }
+        });
+    });
+    $.ajaxSetup({ headers: { 'csrftoken' : '{{ csrf_token() }}' } });
+    $(".search").bind("click",function (){
+        $(".table__search").css('display', 'block' );
+    });
+    $(".slider-area").bind("click",function (){
+        $(".table__search").css('display', 'none');
+    });
+</script>
 
 

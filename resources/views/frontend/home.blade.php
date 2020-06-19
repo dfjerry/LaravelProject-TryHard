@@ -3,7 +3,7 @@
     <!-- Slider Start -->
     <div class="slider-area">
         <div class="slider-active owl-dot-style owl-carousel">
-            <div class="single-slider ptb-240 bg-img" style="background-image:url(assets/img/slider/slider-1.jpg);">
+            <div class="single-slider ptb-240 bg-img" style="background-image:url({{asset("assets/img/slider/slider-1.jpg")}});">
                 <div class="container">
                     <div class="slider-content slider-animated-1">
                         <h1 class="animated">Want to stay <span class="theme-color">healthy</span></h1>
@@ -12,7 +12,7 @@
                     </div>
                 </div>
             </div>
-            <div class="single-slider ptb-240 bg-img" style="background-image:url(assets/img/slider/slider-1-1.jpg);">
+            <div class="single-slider ptb-240 bg-img" style="background-image:url({{asset("assets/img/slider/slider-1-1.jpg")}});">
                 <div class="container">
                     <div class="slider-content slider-animated-1">
                         <h1 class="animated">Want to stay <span class="theme-color">healthy</span></h1>
@@ -61,11 +61,11 @@
                                     </h4>
                                 </div>
                                 <div class="cart-hover">
-                                    <h4><a href="product-details.html">+ Add to cart</a></h4>
+                                    <h4><a href="#"> + Add to cart</a></h4>
                                 </div>
                             </div>
                             <div class="product-price-wrapper">
-                                <span>${{$mow->__get("price")}} -</span>
+                                <span>${{$mow->__get("price")}}</span>
                                 <span class="product-price-old">$120.00 </span>
                             </div>
                         </div>
@@ -148,7 +148,7 @@
                                                 </h4>
                                             </div>
                                             <div class="cart-hover">
-                                                <h4><a href="product-details.html">+ Add to cart</a></h4>
+                                                <h4><a href="#" onclick="addToCart({{$p->__get("id")}})" >+ Add to cart</a></h4>
                                             </div>
                                         </div>
                                         <div class="product-price-wrapper">
@@ -289,5 +289,6 @@
             </div>
         </div>
     </div>
+
     <!-- Newsletter Araea End -->
 @endsection
