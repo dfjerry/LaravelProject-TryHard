@@ -60,7 +60,7 @@
                                                 <div class="product-hover-style">
                                                     <div class="product-title">
                                                         <h4>
-                                                            <a href="product-details.html">Nature Close Tea</a>
+                                                            <a href="product-details.html">{{$p->__get('product_name')}}</a>
                                                         </h4>
                                                     </div>
                                                     <div class="cart-hover">
@@ -74,13 +74,12 @@
                                             </div>
                                             <div class="product-list-details">
                                                 <h4>
-                                                    <a href="product-details.html">Nature Close Tea</a>
+                                                    <a href="product-details.html">{{$p->__get('product_name')}}</a>
                                                 </h4>
                                                 <div class="product-price-wrapper">
-                                                    <span>$100.00</span>
-                                                    <span class="product-price-old">$120.00 </span>
+                                                    <span>{{$p->getPrice()}}</span>
                                                 </div>
-                                                <p>Lorem ipsum dolor sit amet, consectetur adipic it, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                                                <p>{{$p->__get('product_desc')}}</p>
                                                 <div class="shop-list-cart-wishlist">
                                                     <a href="#" title="Wishlist"><i class="ion-android-favorite-outline"></i></a>
                                                     <a href="#" title="Add To Cart"><i class="ion-ios-shuffle-strong"></i></a>
