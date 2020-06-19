@@ -8,18 +8,4 @@
 <script src="{{asset("assets/vendor/chart.js/dist/Chart.extension.js")}}"></script>
 <!-- Argon JS -->
 <script src="{{asset("assets/js/argon.js?v=1.2.0")}}"></script>
-<script type="text/javascript">
-    function addToCart(productId) {
-        $.ajax({
-            url:"{{url("/cart/add/")}}"+productId,
-            method:"POST",
-            data:{
-                qty:1,
-                _token:"{{csrf_token()}}"
-            },
-            success: function () {
-                alert("Mua sản phẩm thành công!");
-            }
-        });
-    }
-</script>
+
