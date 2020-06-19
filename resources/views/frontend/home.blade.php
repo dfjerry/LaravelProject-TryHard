@@ -42,26 +42,19 @@
                             <span>-20%</span>
                             <span style="left: 210px">View:{{$mow->__get("view_count")}}</span>
                             <div class="product-action">
-                                <a class="action-cart" href="{{$mow->getProductUrl()}}" title="Add To Cart">
-                                    <i
-                                        class="fa fa-shopping-cart"></i>
-                                </a>
-                                <a class="action-compare" href="{{$mow->getProductUrl()}}" data-target="#exampleModal" data-toggle="modal" title="Quick View">
+                                <a href="#" onclick="addToCart({{$mow->__get("id")}})"><i
+                                        class="fa fa-shopping-cart"></i></a>
+                                <a class="action-compare" href="#"  data-target="#exampleModal" data-toggle="modal" title="Quick View">
                                     <i class="ion-ios-search-strong"></i>
                                 </a>
                             </div>
                         </div>
                         <div class="product-content text-left">
-                            <div class="product-hover-style">
-                                <div class="product-title">
+                                <div class="product">
                                     <h4>
                                         <a href="{{$mow->getProductUrl()}}">{{$mow->__get("product_name")}}</a>
                                     </h4>
                                 </div>
-                                <div class="cart-hover">
-                                    <h4><a href="{{$mow->getProductUrl()}}"> + Add to cart</a></h4>
-                                </div>
-                            </div>
                             <div class="product-price-wrapper">
                                 <span>${{$mow->__get("price")}}</span>
                             </div>
@@ -126,9 +119,9 @@
                                         <span>-20%</span>
                                         <span style="left: 210px">View:{{$p->__get("view_count")}}</span>
                                         <div class="product-action">
-                                            <a class="action-cart" href="{{$p->getProductUrl()}}" title="Add To Cart">
-                                                <i
-                                                    class="fa fa-shopping-cart"></i>
+                                            <a class="action-cart" href="javascript: void(0);"  onclick="addToCart({{$p->__get("id")}});" >
+{{--                                                <i--}}
+{{--                                                    class="fa fa-shopping-cart"></i>--}}Addtocart
                                             </a>
                                             <a class="action-compare" href="#" data-target="#examplemModal" data-toggle="modal" title="Quick View">
                                                 <i class="ion-ios-search-strong"></i>
@@ -136,16 +129,11 @@
                                         </div>
                                     </div>
                                     <div class="product-content text-left">
-                                        <div class="product-hover-style">
-                                            <div class="product-title">
+                                            <div class="product">
                                                 <h4>
                                                     <a href="{{$p->getProductUrl()}}">{{$p->__get("product_name")}}</a>
                                                 </h4>
                                             </div>
-                                            <div class="cart-hover">
-                                                <h4><a href="{{$p->getProductUrl()}}" onclick="addToCart({{$p->__get("id")}})" >+ Add to cart</a></h4>
-                                            </div>
-                                        </div>
                                         <div class="product-price-wrapper">
                                             <span>${{$p->__get("price")}}</span>
                                         </div>
