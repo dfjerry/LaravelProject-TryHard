@@ -42,7 +42,7 @@
                             <span>-20%</span>
                             <span style="left: 210px">View:{{$mow->__get("view_count")}}</span>
                             <div class="product-action">
-                                <a href="#" onclick="addToCart({{$mow->__get("id")}})"><i
+                                <a href="javascript: void(0);" onclick="addToCart({{$mow->__get("id")}})"><i
                                         class="fa fa-shopping-cart"></i></a>
                                 <a class="action-compare" href="#"  data-target="#exampleModal" data-toggle="modal" title="Quick View">
                                     <i class="ion-ios-search-strong"></i>
