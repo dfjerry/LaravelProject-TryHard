@@ -26,10 +26,11 @@
 
                                 <div class="panel panel-default">
                                     <div class="panel-heading">
-                                        <h5 class="panel-title"><span>1.</span> <a data-toggle="collapse"
-                                                                                   data-parent="#faq"
-                                                                                   href="#payment-2">billing
-                                                information</a>
+                                        <h5 class="panel-title"><span>1.</span>
+                                            <a data-toggle="collapse"
+                                               data-parent="#faq"
+                                               href="#payment-2">billing information
+                                            </a>
                                         </h5>
                                     </div>
                                     <div id="payment-2" class="panel-collapse collapse">
@@ -38,32 +39,30 @@
                                                 <div class="row">
                                                     <div class="col-lg-6 col-md-6">
                                                         <div class="billing-info">
-                                                            <label>User Name</label>
+                                                            <label><b>User Name</b></label>
                                                             <input type="text" name="username"
                                                                    value="{{\Illuminate\Support\Facades\Auth::user()->__get("name")}}">
                                                         </div>
                                                     </div>
                                                     <div class="col-lg-6 col-md-6">
                                                         <div class="billing-info">
-                                                            <label>Address</label>
+                                                            <label><b>Address</b></label>
                                                             <input type="text" name="address">
                                                         </div>
                                                     </div>
                                                     <div class="col-lg-6 col-md-6">
                                                         <div class="billing-info">
-                                                            <label>Telephone</label>
+                                                            <label><b>Telephone</b></label>
                                                             <input type="text" name="telephone">
                                                         </div>
                                                     </div>
                                                     <div class="col-lg-6 col-md-6">
                                                         <div class="billing-info">
-                                                            <label>notes</label>
+                                                            <label><b>notes</b></label>
                                                             <input type="text" name="note">
                                                         </div>
                                                     </div>
-
                                                 </div>
-
                                             </div>
                                         </div>
                                     </div>
@@ -80,7 +79,7 @@
                                             <div class="order-review-wrapper">
                                                 <div class="order-review">
                                                     <div class="checkout__order">
-                                                        <h4>Your Order</h4>
+                                                        <h4 style="text-align: center">Your Order</h4>
                                                         <div class="row">
                                                             <div class="col-lg-12 col-md-12">
                                                                 <div class="checkout__order">
@@ -89,29 +88,35 @@
                                                                     <ul>
                                                                         @php $grandTotal = 0 @endphp
                                                                         @foreach($cart->getItems as $item)
-                                                                            <li>{{$item->__get("product_name")}}
+                                                                            <li style="list-style: none;margin-top: 10px">{{$item->__get("product_name")}} :
                                                                                 <span>${{$item->__get("price")* $item->pivot->__get("qty")}}</span>
                                                                             </li>
                                                                             @php $grandTotal += ($item->__get("price")* $item->pivot->__get("qty"))@endphp
                                                                         @endforeach
                                                                     </ul>
-                                                                    <div class="checkout__order__subtotal">Subtotal
-                                                                        <span>${{$grandTotal}}</span></div>
-                                                                    <div class="checkout__order__total">Total
-                                                                        <span>${{$grandTotal}}</span></div>
-                                                                    <button type="submit" class="site-btn">PLACE ORDER
+                                                                    <div class="checkout__order__subtotal" style="margin-top: -5px">Subtotal
+                                                                        <span> : ${{$grandTotal}}</span></div>
+                                                                    <div class="checkout__order__total" style="margin-top: 10px"">Total
+                                                                        <span> : ${{$grandTotal}}</span></div>
+                                                                    <button type="submit" class="site-btn" style="border-radius: 3px; margin-top: 10px">
+                                                                        PLACE ORDER
                                                                     </button>
                                                                 </div>
                                                             </div>
                                                         </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </form>
                     </div>
                     <div class="billing-back-btn">
-                                                        <span>
-                                                            Forgot an Item?
-                                                            <a href="#"> Edit Your Cart.</a>
-
-                                                        </span>
+                        <span>
+                            Forgot an Item?<a href="#"> Edit Your Cart.</a>
+                        </span>
                         <div class="billing-btn">
                             <button type="submit">Continue</button>
                         </div>
