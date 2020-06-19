@@ -7,10 +7,13 @@ use App\Category;
 use App\Events\OrderCreated;
 use App\Order;
 use App\Product;
+use App\User;
 use Illuminate\Http\Request;
+
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Mail;
 
 class HomeController extends Controller
 {
@@ -33,7 +36,7 @@ class HomeController extends Controller
     {
 
         //Tạo slug Categories
-//         $category = Category::all();
+         $category = Category::all();
 //        foreach ($category as $p){
 //            $slug = \Illuminate\Support\Str::slug($p->__get("category_name"));
 //            $p->slug = $slug.$p->__get("id");// luu lai vao DB
@@ -221,7 +224,11 @@ class HomeController extends Controller
                 ]);
             }
 //            die("done");
-
+            $currentUser = Auth::user();
+            $order = Order::where("user_id", Auth::id())->firstOrFail();
+            Mail::send('mail.checkout-form',["cart" => $cart->getItems,"user" => $currentUser,"order" => $order],function ($message){
+                $message->to(Auth::user()->__get("email"),Auth::user()->__get("name"))->subject('TeaCozy Đơn Hàng Khách Hàng '.Auth::user()->__get("name"));
+            });
             event(new OrderCreated($order));
         } catch (\Exception $exception) {
 
