@@ -16,7 +16,6 @@ Route::get("/edit-product/{id}","ProductController@editProduct");
 Route::put("/update-product/{id}","ProductController@updateProduct");
 Route::delete("/delete-product/{id}","ProductController@deleteProduct");
 
-//brand sau khi 7x7=49 lan clone(:T)
 
 
 //Distributor

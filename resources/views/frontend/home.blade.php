@@ -37,18 +37,16 @@
                     <div class="product-wrapper">
                         <div class="product-img">
                             <a href="{{$mow->getProductUrl()}}">
-                                <img alt="" src="{{$mow->getImage()}}">
+                                <img alt="" src="{{$mow->getImage()}}" style="width: 268px; height: 268px">
                             </a>
                             <span>-20%</span>
                             <span style="left: 210px">View:{{$mow->__get("view_count")}}</span>
                             <div class="product-action">
-                                <a class="action-wishlist" href="#" title="Wishlist">
-                                    <i class="ion-android-favorite-outline"></i>
+                                <a class="action-cart" href="{{$mow->getProductUrl()}}" title="Add To Cart">
+                                    <i
+                                        class="fa fa-shopping-cart"></i>
                                 </a>
-                                <a class="action-cart" href="#" title="Add To Cart">
-                                    <i class="ion-ios-shuffle-strong"></i>
-                                </a>
-                                <a class="action-compare" href="#" data-target="#exampleModal" data-toggle="modal" title="Quick View">
+                                <a class="action-compare" href="{{$mow->getProductUrl()}}" data-target="#exampleModal" data-toggle="modal" title="Quick View">
                                     <i class="ion-ios-search-strong"></i>
                                 </a>
                             </div>
@@ -61,12 +59,11 @@
                                     </h4>
                                 </div>
                                 <div class="cart-hover">
-                                    <h4><a href="#"> + Add to cart</a></h4>
+                                    <h4><a href="{{$mow->getProductUrl()}}"> + Add to cart</a></h4>
                                 </div>
                             </div>
                             <div class="product-price-wrapper">
                                 <span>${{$mow->__get("price")}}</span>
-                                <span class="product-price-old">$120.00 </span>
                             </div>
                         </div>
                     </div>
@@ -124,16 +121,14 @@
                                 <div class="product-wrapper mb-30">
                                     <div class="product-img" style="width: 270px; height: 270px">
                                         <a href="{{$p->getProductUrl()}}">
-                                            <img alt="" src="{{$p->getImage()}}">
+                                            <img alt="" src="{{$p->getImage()}}" style="width: 268px; height: 268px">
                                         </a>
                                         <span>-20%</span>
-                                        <span style="left: 210px">View:{{$mow->__get("view_count")}}</span>
+                                        <span style="left: 210px">View:{{$p->__get("view_count")}}</span>
                                         <div class="product-action">
-                                            <a class="action-wishlist" href="#" title="Wishlist">
-                                                <i class="ion-android-favorite-outline"></i>
-                                            </a>
-                                            <a class="action-cart" href="#" title="Add To Cart">
-                                                <i class="ion-ios-shuffle-strong"></i>
+                                            <a class="action-cart" href="{{$p->getProductUrl()}}" title="Add To Cart">
+                                                <i
+                                                    class="fa fa-shopping-cart"></i>
                                             </a>
                                             <a class="action-compare" href="#" data-target="#examplemModal" data-toggle="modal" title="Quick View">
                                                 <i class="ion-ios-search-strong"></i>
@@ -148,12 +143,11 @@
                                                 </h4>
                                             </div>
                                             <div class="cart-hover">
-                                                <h4><a href="#" onclick="addToCart({{$p->__get("id")}})" >+ Add to cart</a></h4>
+                                                <h4><a href="{{$p->getProductUrl()}}" onclick="addToCart({{$p->__get("id")}})" >+ Add to cart</a></h4>
                                             </div>
                                         </div>
                                         <div class="product-price-wrapper">
-                                            <span>$100.00 -</span>
-                                            <span class="product-price-old">1200000</span>
+                                            <span>${{$p->__get("price")}}</span>
                                         </div>
                                     </div>
 
@@ -161,7 +155,6 @@
 
                             </div>
                         @endforeach
-
                     </div>
 
                 </div>
@@ -205,6 +198,84 @@
         </div>
     </div>
     <!-- Testimonial Area End -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">x</span></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-5 col-sm-5 col-xs-12">
+                            <!-- Thumbnail Large Image start -->
+                            <div class="tab-content">
+                                <div id="pro-1" class="tab-pane fade show active">
+                                    <img src="assets/img/product-details/product-detalis-l1.jpg" alt="">
+                                </div>
+                                <div id="pro-2" class="tab-pane fade">
+                                    <img src="assets/img/product-details/product-detalis-l2.jpg" alt="">
+                                </div>
+                                <div id="pro-3" class="tab-pane fade">
+                                    <img src="assets/img/product-details/product-detalis-l3.jpg" alt="">
+                                </div>
+                                <div id="pro-4" class="tab-pane fade">
+                                    <img src="assets/img/product-details/product-detalis-l4.jpg" alt="">
+                                </div>
+                            </div>
+                            <!-- Thumbnail Large Image End -->
+                            <!-- Thumbnail Image End -->
+                            <div class="product-thumbnail">
+                                <div class="thumb-menu owl-carousel nav nav-style" role="tablist">
+                                    <a class="active" data-toggle="tab" href="#pro-1"><img src="assets/img/product-details/product-detalis-s1.jpg" alt=""></a>
+                                    <a data-toggle="tab" href="#pro-2"><img src="assets/img/product-details/product-detalis-s2.jpg" alt=""></a>
+                                    <a data-toggle="tab" href="#pro-3"><img src="assets/img/product-details/product-detalis-s3.jpg" alt=""></a>
+                                    <a data-toggle="tab" href="#pro-4"><img src="assets/img/product-details/product-detalis-s4.jpg" alt=""></a>
+                                </div>
+                            </div>
+                            <!-- Thumbnail image end -->
+                        </div>
+                        <div class="col-md-7 col-sm-7 col-xs-12">
+                            <div class="modal-pro-content">
+                                <h3>{{$p->__get("product_name")}}</h3>
+                                <div class="product-price-wrapper">
+                                    <span class="product-price-old">£162.00 </span>
+                                    <span>£120.00</span>
+                                </div>
+                                <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet.</p>
+                                <div class="quick-view-select">
+                                    <div class="select-option-part">
+                                        <label>Size*</label>
+                                        <select class="select">
+                                            <option value="">S</option>
+                                            <option value="">M</option>
+                                            <option value="">L</option>
+                                        </select>
+                                    </div>
+                                    <div class="quickview-color-wrap">
+                                        <label>Color*</label>
+                                        <div class="quickview-color">
+                                            <ul>
+                                                <li class="blue">b</li>
+                                                <li class="red">r</li>
+                                                <li class="pink">p</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="product-quantity">
+                                    <div class="cart-plus-minus">
+                                        <input class="cart-plus-minus-box" type="text" name="qtybutton" value="02">
+                                    </div>
+                                    <button>Add to cart</button>
+                                </div>
+                                <span><i class="fa fa-check"></i> In stock</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     <!-- News Area Start -->
     <div class="blog-area bg-image-1 pt-90 pb-70">
         <div class="container">

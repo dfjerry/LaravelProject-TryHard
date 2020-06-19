@@ -23,69 +23,7 @@
                             @method("POST")
                             @csrf
                             <div id="faq" class="panel-group">
-{{--                                <div class="panel panel-default">--}}
-{{--                                    <div class="panel-heading">--}}
-{{--                                        <h5 class="panel-title"><span>1.</span> <a data-toggle="collapse"--}}
-{{--                                                                                   data-parent="#faq"--}}
-{{--                                                                                   href="#payment-1">Checkout method</a>--}}
-{{--                                        </h5>--}}
-{{--                                    </div>--}}
-{{--                                    <div id="payment-1" class="panel-collapse collapse show">--}}
-{{--                                        <div class="panel-body">--}}
-{{--                                            <div class="row">--}}
-{{--                                                <div class="col-lg-5">--}}
-{{--                                                    <div class="checkout-register">--}}
-{{--                                                        <div class="title-wrap">--}}
-{{--                                                            <h4 class="cart-bottom-title section-bg-white">CHECKOUT AS A--}}
-{{--                                                                GUEST OR REGISTER</h4>--}}
-{{--                                                        </div>--}}
-{{--                                                        <div class="register-us">--}}
-{{--                                                            <ul>--}}
-{{--                                                                <li><input type="checkbox"> Checkout as Guest</li>--}}
-{{--                                                                <li><input type="checkbox"> Register</li>--}}
-{{--                                                            </ul>--}}
-{{--                                                        </div>--}}
-{{--                                                        <h6>REGISTER AND SAVE TIME!</h6>--}}
-{{--                                                        <div class="register-us-2">--}}
-{{--                                                            <p>Register with us for future convenience.</p>--}}
-{{--                                                            <ul>--}}
-{{--                                                                <li>Fast and easy checkout</li>--}}
-{{--                                                                <li>Easy access to your order history and status</li>--}}
-{{--                                                            </ul>--}}
-{{--                                                        </div>--}}
-{{--                                                        <a href="#">Apply Coupon</a>--}}
-{{--                                                    </div>--}}
-{{--                                                </div>--}}
-{{--                                                <div class="col-lg-7">--}}
-{{--                                                    <div class="checkout-login">--}}
-{{--                                                        <div class="title-wrap">--}}
-{{--                                                            <h4 class="cart-bottom-title section-bg-white">LOGIN</h4>--}}
-{{--                                                        </div>--}}
-{{--                                                        <p>Already have an account? </p>--}}
-{{--                                                        <span>Please log in below:</span>--}}
-{{--                                                        <form>--}}
-{{--                                                            <div class="login-form">--}}
-{{--                                                                <label>Email Address * </label>--}}
-{{--                                                                <input type="email" name="email">--}}
-{{--                                                            </div>--}}
-{{--                                                            <div class="login-form">--}}
-{{--                                                                <label>Password *</label>--}}
-{{--                                                                <input type="password" name="email">--}}
-{{--                                                            </div>--}}
-{{--                                                        </form>--}}
-{{--                                                        <div class="login-forget">--}}
-{{--                                                            <a href="#">Forgot your password?</a>--}}
-{{--                                                            <p>* Required Fields</p>--}}
-{{--                                                        </div>--}}
-{{--                                                        <div class="checkout-login-btn">--}}
-{{--                                                            <a href="#">Login</a>--}}
-{{--                                                        </div>--}}
-{{--                                                    </div>--}}
-{{--                                                </div>--}}
-{{--                                            </div>--}}
-{{--                                        </div>--}}
-{{--                                    </div>--}}
-{{--                                </div>--}}
+
                                 <div class="panel panel-default">
                                     <div class="panel-heading">
                                         <h5 class="panel-title"><span>1.</span> <a data-toggle="collapse"
@@ -130,58 +68,11 @@
                                         </div>
                                     </div>
                                 </div>
-{{--                                <div class="panel panel-default">--}}
-{{--                                    <div class="panel-heading">--}}
-{{--                                        <h5 class="panel-title"><span>3.</span> <a data-toggle="collapse"--}}
-{{--                                                                                   data-parent="#faq"--}}
-{{--                                                                                   href="#payment-3">shipping--}}
-{{--                                                information</a></h5>--}}
-{{--                                    </div>--}}
-{{--                                    <div id="payment-3" class="panel-collapse collapse ">--}}
-{{--                                        <div class="panel-body">--}}
-{{--                                            <div class="shipping-information-wrapper">--}}
-{{--                                                <div class="shipping-info-2">--}}
-{{--                                                    <span>HasTech</span>--}}
-{{--                                                    <span>Bonosrie</span>--}}
-{{--                                                    <span>D - Block</span>--}}
-{{--                                                    <span>Dkaka, 1201</span>--}}
-{{--                                                    <span>Bangladesh</span>--}}
-{{--                                                    <span>T: +8800 879 9876 </span>--}}
-{{--                                                </div>--}}
-{{--                                                <div class="edit-address">--}}
-{{--                                                    <a href="#">Edit Address</a>--}}
-{{--                                                </div>--}}
-{{--                                                <div class="billing-select">--}}
-{{--                                                    <select class="email s-email s-wid">--}}
-{{--                                                        <option>Select Your Address</option>--}}
-{{--                                                        <option>Add New Address</option>--}}
-{{--                                                        <option>Dkaka, 1201, Bangladesh</option>--}}
-{{--                                                    </select>--}}
-{{--                                                </div>--}}
-{{--                                                <div class="ship-wrapper">--}}
-{{--                                                    <div class="single-ship">--}}
-{{--                                                        <input type="checkbox" checked="" value="address"--}}
-{{--                                                               name="address">--}}
-{{--                                                        <label>Use Billing Address</label>--}}
-{{--                                                    </div>--}}
-{{--                                                </div>--}}
-{{--                                                <div class="billing-back-btn">--}}
-{{--                                                    <div class="billing-back">--}}
-{{--                                                        <a href="#"><i class="ion-arrow-up-c"></i> back</a>--}}
-{{--                                                    </div>--}}
-{{--                                                    <div class="billing-btn">--}}
-{{--                                                        <button type="submit">Continue</button>--}}
-{{--                                                    </div>--}}
-{{--                                                </div>--}}
-{{--                                            </div>--}}
-{{--                                        </div>--}}
-{{--                                    </div>--}}
-{{--                                </div>--}}
                                 <div class="panel panel-default">
                                     <div class="panel-heading">
                                         <h5 class="panel-title"><span>2. </span> <a data-toggle="collapse"
-                                                                                   data-parent="#faq"
-                                                                                   href="#payment-6">Order Review</a>
+                                                                                    data-parent="#faq"
+                                                                                    href="#payment-6">Order Review</a>
                                         </h5>
                                     </div>
                                     <div id="payment-6" class="panel-collapse collapse">
@@ -190,9 +81,6 @@
                                                 <div class="order-review">
                                                     <div class="checkout__order">
                                                         <h4>Your Order</h4>
-                                                        {{--                                                            <form action="{{url("/checkout")}}"  method="post">--}}
-                                                        {{--                                                                @method("POST")--}}
-                                                        {{--                                                                @csrf--}}
                                                         <div class="row">
                                                             <div class="col-lg-12 col-md-12">
                                                                 <div class="checkout__order">
@@ -231,21 +119,5 @@
                 </div>
             </div>
         </div>
-    </div>
-    </div>
-    </div>
-    </div>
-    </div>
-    <div class="col-lg-3">
-        <div class="checkout-progress">
-            <h4>Checkout Progress</h4>
-            <ul>
-                <li style="background-color: whitesmoke;padding-top: 5px">1. Billing Information</li>
-                <li>2. Order Review</li>
-            </ul>
-        </div>
-    </div>
-    </div>
-    </div>
     </div>
 @endsection
