@@ -257,4 +257,17 @@ class HomeController extends Controller
         }
         return redirect()->to("/home");
     }
+//    public function getModalProduct($id){
+//        $currentProduct = Product::find($id);
+//        return view("frontend.home",[
+//            "currentProduct" => $currentProduct,
+//        ]);
+//    }
+//    public function getModal($id){
+//        $currentProduct = Product::findOrFail($id);
+//        dd($currentProduct);
+//        return view("frontend.home",[
+//            "currentProduct" => $currentProduct,
+//        ]);
+//    }
 }

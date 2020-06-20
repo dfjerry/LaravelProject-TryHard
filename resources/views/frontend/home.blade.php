@@ -44,7 +44,7 @@
                             <div class="product-action">
                                 <a href="javascript: void(0);" onclick="addToCart({{$mow->__get("id")}})"><i
                                         class="fa fa-shopping-cart"></i></a>
-                                <a class="action-compare" href="#"  data-target="#exampleModal" data-toggle="modal" title="Quick View">
+                                <a class="action-compare" href="#"  data-toggle="modal" title="Quick View">
                                     <i class="ion-ios-search-strong"></i>
                                 </a>
                             </div>
@@ -122,7 +122,7 @@
                                             <a class="action-cart" href="javascript: void(0);"  onclick="addToCart({{$p->__get("id")}});" >
                                                 <i class="fa fa-shopping-cart"></i>
                                             </a>
-                                            <a class="action-compare" href="#" data-target="#exampleModal" data-toggle="modal" title="Quick View">
+                                            <a class="action-compare" href="{{url("/modal/{$p->__get("id")}")}}" data-target="#exampleModal" data-toggle="modal" title="Quick View">
                                                 <i class="ion-ios-search-strong"></i>
                                             </a>
                                         </div>
@@ -225,6 +225,7 @@
             </div>
         </div>
     </div>
+    </form>
     <!-- News Area Start -->
     <div class="blog-area bg-image-1 pt-90 pb-70">
         <div class="container">

@@ -28,6 +28,7 @@ Route::post("/checkout","HomeController@placeOrder")->middleware("auth");
 
 
 Route::get("/blog","BlogController@index");
+Route::post("/modal/{id}","HomeController@getModal");
 
 //quick view
 //Route::get("/shop/product/{id}", "HomeController@shop")->name("product");
