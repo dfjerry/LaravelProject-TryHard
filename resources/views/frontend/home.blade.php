@@ -120,8 +120,7 @@
                                         <span style="left: 210px">View:{{$p->__get("view_count")}}</span>
                                         <div class="product-action">
                                             <a class="action-cart" href="javascript: void(0);"  onclick="addToCart({{$p->__get("id")}});" >
-{{--                                                <i--}}
-{{--                                                    class="fa fa-shopping-cart"></i>--}}Addtocart
+                                                <i class="fa fa-shopping-cart"></i>
                                             </a>
                                             <a class="action-compare" href="#" data-target="#examplemModal" data-toggle="modal" title="Quick View">
                                                 <i class="ion-ios-search-strong"></i>
