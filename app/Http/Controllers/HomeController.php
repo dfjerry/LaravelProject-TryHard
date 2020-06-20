@@ -111,6 +111,7 @@ class HomeController extends Controller
     {
         return view("frontend.shop");
     }
+
     public function addToCart(Product $product, Request $request)
     {
         $qty = $request->has("qty") && (int)$request->get("qty") > 0 ? (int)$request->get("qty") : 1;
