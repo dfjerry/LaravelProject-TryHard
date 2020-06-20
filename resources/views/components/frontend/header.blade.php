@@ -25,7 +25,7 @@
                                                     <ul>
                                                         <li class="mega-menu-title">{{$category->__get("category_name")}}</li>
                                                         @foreach(\App\Product::with("Category")->where("category_id","like",$category->__get("id"))->get() as $pro )
-                                                            <li><a href="shop.html">{{$pro->__get("product_name")}}</a>
+                                                            <li><a href="{{$pro->getProductUrl()}}">{{$pro->__get("product_name")}}</a>
                                                             </li>
                                                         @endforeach
                                                     </ul>
