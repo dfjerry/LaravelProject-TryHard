@@ -112,7 +112,7 @@
                         <a class="dropdown-item"  style="margin-left: 20px!important;position: absolute;top: -5px" href="{{ route('logout') }}"
                            onclick="event.preventDefault();
                             document.getElementById('logout-form').submit();">
-                            <li class="float-right" style="list-style: none;"><button style="border-radius: 5px; width: 100px; height: 40px" type="button" class="btn btn-secondary">Logout</button></li>
+                            <li class="float-right" style="list-style: none;"><button style="border-radius: 20px; width: 100px; height: 40px" type="button" class="btn btn-secondary">Logout</button></li>
                         </a>
                         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                             @csrf
