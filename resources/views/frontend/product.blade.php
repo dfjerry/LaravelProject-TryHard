@@ -99,7 +99,7 @@
                         <div class="pro-dec-categories">
                             <ul>
                                 <li class="categories-title">Categories:</li>
-                                <li><a href="#">{{$product->__get("product_name")}}</a></li>
+                                <li><a href="#"></a></li>
 
                             </ul>
                         </div>
@@ -124,8 +124,7 @@
         <div class="container">
             <div class="description-review-wrapper">
                 <div class="description-review-topbar nav text-center">
-                    <a class="active" data-toggle="tab" href="#des-details1">Description</a>
-                    <a data-toggle="tab" href="#des-details2">Tags</a>
+                    <a class="active" data-toggle="tab" href="#des-det</a>ails1">Description</a>
                     <a data-toggle="tab" href="#des-details3">Review</a>
                 </div>
                 <div class="tab-content description-review-bottom">

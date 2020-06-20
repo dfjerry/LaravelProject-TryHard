@@ -26,10 +26,11 @@ Route::get("/shopping-cart","HomeController@shoppingCart");
 Route::get("/checkout","HomeController@checkout")->middleware("auth");
 Route::post("/checkout","HomeController@placeOrder")->middleware("auth");
 
-// blog Route
+
 Route::get("/blog","BlogController@index");
 
-
+//quick view
+//Route::get("/shop/product/{id}", "HomeController@shop")->name("product");
 
 
 
