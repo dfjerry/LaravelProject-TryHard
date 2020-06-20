@@ -138,9 +138,7 @@
                                             <span>${{$p->__get("price")}}</span>
                                         </div>
                                     </div>
-
                                 </div>
-
                             </div>
                         @endforeach
                     </div>

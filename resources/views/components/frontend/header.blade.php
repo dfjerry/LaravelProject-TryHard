@@ -18,12 +18,12 @@
                                     <li class="top-hover col-lg-2"><a href="{{url("/home")}}">home</a>
                                     </li>
 
-                                    <li class="mega-menu-position top-hover"><a href="#">shop</a>
+                                    <li class="mega-menu-position top-hover"><a href="{{url("/shop")}}">shop</a>
                                         <ul class="mega-menu">
                                             <li>
                                                 <ul>
                                                     <li class="mega-menu-title"></li>
-                                                    <li><a href="shop.html"></a></li>
+                                                    <li><a href="{{url("/shop")}}"></a></li>
 
                                                 </ul>
                                             </li>
