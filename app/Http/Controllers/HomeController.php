@@ -37,21 +37,24 @@ class HomeController extends Controller
 
         //Tạo slug Categories
          $category = Category::all();
-//        foreach ($category as $p){
-//            $slug = \Illuminate\Support\Str::slug($p->__get("category_name"));
-//            $p->slug = $slug.$p->__get("id");// luu lai vao DB
-//            $p->save();
-//            // tuong duong $p->update(["slug"=>$slug.$p->__get("id")]);
-//        }
+        foreach ($category as $p){
+            $slug = \Illuminate\Support\Str::slug($p->__get("category_name"));
+            $p->slug = $slug.$p->__get("id");// luu lai vao DB
+            $p->save();
+            // tuong duong $p->update(["slug"=>$slug.$p->__get("id")]);
+        }
+
         //Tạo slug product
         $products = Product::all();
         $most_viewer = Product::orderBy("view_count", "DESC")->limit(8)->get();
-//        foreach ($products as $p){
-//            $slug = \Illuminate\Support\Str::slug($p->__get("product_name"));
-//            $p->slug = $slug.$p->__get("id");// luu lai vao DB
-//            $p->save();
+        foreach ($products as $p){
+            $slug = \Illuminate\Support\Str::slug($p->__get("product_name"));
+            $p->slug = $slug.$p->__get("id");// luu lai vao DB
+            $p->save();
 //            // tuong duong $p->update(["slug"=>$slug.$p->__get("id")]);
-//        }
+      }
+
+
         $categories = Category::orderBy("created_at", "ASC")->get();
         return view("frontend.home", [
             "categories" => $categories,
@@ -79,6 +82,7 @@ class HomeController extends Controller
             session(["view_count{$product->__get("id")} => true"]);// lấy session ra 1 session sẽ có giá trị lưu giữ trong vòng 2 tiếng
         }
         $relativeProducts = Product::with("Category")->paginate(4);//nạp sẵn phần cần nạp trong collection, lấy theo kiểu quan hệ
+
         return view("frontend.product", [
             "product" => $product,
             "relativeProduct" => $relativeProducts,

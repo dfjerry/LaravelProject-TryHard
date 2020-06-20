@@ -26,7 +26,7 @@ Route::get("/shopping-cart","HomeController@shoppingCart");
 Route::get("/checkout","HomeController@checkout")->middleware("auth");
 Route::post("/checkout","HomeController@placeOrder")->middleware("auth");
 
-
-
+//quick view
+//Route::get("/shop/product/{id}", "HomeController@shop")->name("product");
 
 
