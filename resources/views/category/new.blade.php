@@ -19,11 +19,12 @@
                     <span class="error invalid-feedback">  {{$message}}</span>
                     @enderror
                 </div>
+                <div class="form-group">
+                    <label>Category Image</label>
+                    <input type="file" name="category_image" class="form-control" placeholder="New Category Image">
+                </div>
             </div>
-            <div class="form-group">
-                <label>Category Image</label>
-                <input type="file" name="category_image" class="form-control" placeholder="New Category Image">
-            </div>
+
             <!-- /.card-body -->
 
             <div class="card-footer">

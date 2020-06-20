@@ -49,7 +49,15 @@
                             <a class="dropdown-item" href="{{url("admin/list-user")}}">User List</a>
                         </div>
                     </li>
-
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <i class="fas fa-blog text-blue"></i>Blog
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <a class="dropdown-item" href="{{url("admin/list-blog")}}">Blog List</a>
+                            <a class="dropdown-item" href="{{url("admin/new-blog")}}">New Blog</a>
+                        </div>
+                    </li>
                 </ul>
                 <!-- Divider -->
                 <hr class="my-3">

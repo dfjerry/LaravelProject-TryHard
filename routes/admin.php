@@ -36,4 +36,11 @@ Route::put("/update-user/{id}", "UserController@updateUser");
 Route::delete("/delete-user/{id}", "UserController@deleteUser");
 Route::get("/view-user/{id}","UserController@viewUser");
 
+//Blog Router
+Route::get('/new-blog','BlogController@newBlog');
+Route::get('/list-blog','BlogController@listBlog');
+Route::put("/update-blog/{id}","BlogController@updateBlog");
+Route::post('/save-blog', 'BlogController@saveBlog');
+Route::get("/edit-blog/{id}", "BlogController@editBlog");
+Route::delete("/delete-blog/{id}", "BlogController@deleteBlog");
 
