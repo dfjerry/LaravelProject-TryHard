@@ -105,15 +105,19 @@
                     </div>
                 </div>
                 <div class="logout-button col-lg-1 col-md-2 col-2">
-                    <div class="logout">
-                        <a class="dropdown-item" href="{{ route('logout') }}"
+                    <div class="logout" style="position: relative">
+                        @guest
+                            <li class="float-right" style="list-style: none;"><a  href="{{url("/login")}}" style="border-radius: 20px; width: 100px; height: 40px" type="button" class="btn btn-secondary">Login</a></li>
+                        @else
+                        <a class="dropdown-item"  style="margin-left: 20px!important;position: absolute;top: -5px" href="{{ route('logout') }}"
                            onclick="event.preventDefault();
                             document.getElementById('logout-form').submit();">
-                            <li class="float-right" style="list-style: none"><button style="border-radius: 20px" type="button" class="btn btn-secondary">LogOut</button></li>
+                            <li class="float-right" style="list-style: none;"><button style="border-radius: 5px; width: 100px; height: 40px" type="button" class="btn btn-secondary">Logout</button></li>
                         </a>
                         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                             @csrf
                         </form>
+                        @endguest
                     </div>
                 </div>
             </div>
