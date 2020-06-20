@@ -20,17 +20,20 @@
 
                                     <li class="mega-menu-position top-hover"><a href="{{url("/shop")}}">shop</a>
                                         <ul class="mega-menu">
-                                            <li>
-{{--                                                @foreach($categories as $cat)--}}
-{{--                                                    @foreach($product as $pro)--}}
-                                                <ul>
-{{--                                                    <li class="mega-menu-title">{{$pr->__get("product_name")}}</li>--}}
-{{--                                                    <li><a href="shop.html">{{$cat->__get("category_name")}}</a></li>--}}
-                                                </ul>
-{{--                                                    @endforeach--}}
-{{--                                                    @endforeach--}}
-                                            </li>
+                                            @foreach(\App\Category::orderBy("category_name","ASC")->limit(4)->get() as $category)
+                                                <li>
+                                                    <ul>
+                                                        <li class="mega-menu-title">{{$category->__get("category_name")}}</li>
+                                                        @foreach(\App\Product::with("Category")->where("category_id","like",$category->__get("id"))->get() as $pro )
+                                                            <li><a href="shop.html">{{$pro->__get("product_name")}}</a>
+                                                            </li>
+                                                        @endforeach
+                                                    </ul>
+                                                </li>
+
+                                            @endforeach
                                         </ul>
+
                                     </li>
                                     <li><a href="{{url("/about")}}">about</a></li>
                                     <li><a href="{{url("/blog")}}">blog</a></li>
@@ -42,8 +45,11 @@
                                                     @method("POST")
                                                     @csrf
                                                     <div class="md-form active-pink-2 mb-3" style="position: relative;">
-                                                        <input class="search" id="search" name="search" type="text" placeholder="Search"/>
-                                                        <button class="button__search" style=" background-color: transparent;position: absolute;left: 160px" type="submit"><i class="fas fa-search"></i></button>
+                                                        <input class="search" id="search" name="search" type="text"
+                                                               placeholder="Search"/>
+                                                        <button class="button__search"
+                                                                style=" background-color: transparent;position: absolute;left: 160px"
+                                                                type="submit"><i class="fas fa-search"></i></button>
                                                     </div>
                                                 </form>
                                             </div>
@@ -79,15 +85,14 @@
                                     <ul>
                                         <li class="single-shopping-cart">
                                             <div class="shopping-cart-img">
-                                                <a href="#"><img style="width: 70px; height: 70px " src="{{$p->getImage()}} "></a>
+                                                <a href="#"><img style="width: 70px; height: 70px "
+                                                                 src="{{$p->getImage()}} "></a>
                                             </div>
                                             <div class="shopping-cart-title">
                                                 <p><a href="#">{{$p->__get("product_name")}}</a></p>
 
-                                                <p>Qty:<span>{{$p->__get("qty")}}</span> </p>
-                                                {{--                                            <span class="cart-plus-minus-box" type="text" value="" name="qtybutton"></span>--}}
-
-                                                <span >Price: {{$p->getPrice()}}</span>
+                                                <p>Qty:<span>{{$p->__get("qty")}}</span></p>
+                                                <span>Price: {{$p->getPrice()}}</span>
                                             </div>
                                             <div class="shopping-cart-delete">
                                                 <a href="#"><i class="ion ion-close"></i></a>
@@ -110,16 +115,25 @@
                 <div class="logout-button col-lg-1 col-md-2 col-2">
                     <div class="logout" style="position: relative">
                         @guest
-                            <li class="float-right" style="list-style: none;"><a  href="{{url("/login")}}" style="border-radius: 20px; width: 100px; height: 40px" type="button" class="btn btn-secondary">Login</a></li>
+                            <li class="float-right" style="list-style: none;"><a href="{{url("/login")}}"
+                                                                                 style="border-radius: 20px; width: 100px; height: 40px"
+                                                                                 type="button"
+                                                                                 class="btn btn-secondary">Login</a>
+                            </li>
                         @else
-                        <a class="dropdown-item"  style="margin-left: 20px!important;position: absolute;top: -5px" href="{{ route('logout') }}"
-                           onclick="event.preventDefault();
+                            <a class="dropdown-item" style="margin-left: 20px!important;position: absolute;top: -5px"
+                               href="{{ route('logout') }}"
+                               onclick="event.preventDefault();
                             document.getElementById('logout-form').submit();">
-                            <li class="float-right" style="list-style: none;"><button style="border-radius: 20px; width: 100px; height: 40px" type="button" class="btn btn-secondary">Logout</button></li>
-                        </a>
-                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                            @csrf
-                        </form>
+                                <li class="float-right" style="list-style: none;">
+                                    <button style="border-radius: 20px; width: 100px; height: 40px" type="button"
+                                            class="btn btn-secondary">Logout
+                                    </button>
+                                </li>
+                            </a>
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                @csrf
+                            </form>
                         @endguest
                     </div>
                 </div>

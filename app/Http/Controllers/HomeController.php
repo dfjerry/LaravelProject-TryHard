@@ -119,13 +119,13 @@ class HomeController extends Controller
 
         ]);
     }
-    public function header(Request $request)
+    public function header()
     {
         $products = Product::all();
-        $categories = Category::all();
+        $category = Category::all();
         return view("components.frontend.header",[
             "products" => $products,
-            "category" => $categories
+            "category" => $category
         ]);
     }
 

@@ -19,7 +19,7 @@ Route::get("/about", "HomeController@about");
 Route::get("/contact", "HomeController@contact");
 Route::get("/myaccount", "HomeController@myaccount");
 Route::get("/shop","HomeController@shop");
-
+Route::get("/header","HomeController@header");
 
 Route::post("/cart/add/{product}", "HomeController@addToCart");
 Route::get("/shopping-cart","HomeController@shoppingCart");
