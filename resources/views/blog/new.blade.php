@@ -21,7 +21,19 @@
                 </div>
                 <div class="form-group">
                     <label>Blog Image</label>
-                    <input type="file" name="blog_image" class="form-control" placeholder="New Blog Image">
+                    <input type="text" name="blog_image" class="form-control" placeholder="New Blog Image">
+                </div>
+                <div class="form-group">
+                    <label>Blog Image1</label>
+                    <input type="text" name="blog_image1" class="form-control" placeholder="New Blog Name"/>
+                </div>
+                <div class="form-group">
+                    <label>Blog Image2</label>
+                    <input type="text" name="blog_image2" class="form-control" placeholder="New Blog Name"/>
+                </div>
+                <div class="form-group">
+                    <label>Blog Image3</label>
+                    <input type="text" name="blog_image3" class="form-control" placeholder="New Blog Name"/>
                 </div>
                 <div class="form-group">
                     <label>Author</label>
@@ -52,11 +64,9 @@
                     @enderror
                 </div>
             </div>
-            <!-- /.card-body -->
             <div class="card-footer">
                 <button type="submit" class="btn btn-primary">Create</button>
             </div>
         </form>
     </div>
-    <!-- /.card -->
 @endsection

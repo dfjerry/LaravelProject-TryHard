@@ -10,12 +10,9 @@
                             </div>
                             <div class="footer-content">
                                 <ul>
-                                    <li><a href="{{url("/myaccount")}}">My Account</a></li>
-                                    <li><a href="about-us.html">Order History</a></li>
-                                    <li><a href="wishlist.html">WishList</a></li>
-                                    <li><a href="#">Newsletter</a></li>
-                                    <li><a href="about-us.html">Order History</a></li>
-                                    <li><a href="#">International Orders</a></li>
+                                    <li><a style="color: black!important;text-decoration: none!important;" href="{{url("/myaccount")}}">Account</a></li>
+                                    <li><a style="color: black!important;text-decoration: none!important;" href="{{url("/login")}}">Register</a></li>
+                                    <li><a style="color: black!important;text-decoration: none!important;" href="{{url("/register")}}">Login</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -27,12 +24,8 @@
                             </div>
                             <div class="footer-content">
                                 <ul>
-                                    <li><a href="{{url("/about")}}">About Us</a></li>
-                                    <li><a href="#">Delivery Information</a></li>
-                                    <li><a href="#">Privacy Policy</a></li>
-                                    <li><a href="#">Terms & Conditions</a></li>
-                                    <li><a href="#">Customer Service</a></li>
-                                    <li><a href="#">Return Policy</a></li>
+                                    <li><a style="color: black!important;text-decoration: none!important;" href="{{url("/about")}}">About Us</a></li>
+                                    <li><a style="color: black!important;text-decoration: none!important;" href="{{url("/blog")}}">Blog</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -40,16 +33,13 @@
                     <div class="col-lg-3 col-md-6 col-sm-6">
                         <div class="footer-widget mb-40">
                             <div class="footer-title mb-25">
-                                <h4>Quick Links</h4>
+                                <h4>Quick Link</h4>
                             </div>
                             <div class="footer-content">
                                 <ul>
-                                    <li><a href="#">Support Center</a></li>
-                                    <li><a href="#">Term & Conditions</a></li>
-                                    <li><a href="#">Shipping</a></li>
-                                    <li><a href="#">Privacy Policy</a></li>
-                                    <li><a href="#">Help</a></li>
-                                    <li><a href="#">FAQS</a></li>
+                                    <li><a style="color: black!important;text-decoration: none!important;" href="{{url("/shop")}}">Shop</a></li>
+                                    <li><a style="color: black!important;text-decoration: none!important;" href="{{url("/contact")}}">Contact</a></li>
+                                    <li><a style="color: black!important;text-decoration: none!important;" href="{{url("/shopping-cart")}}">Cart</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -60,7 +50,7 @@
                                 <h4>Contact Us</h4>
                             </div>
                             <div class="footer-about">
-                                <p>Your current address goes to here,120 haka, angladesh</p>
+                                <p>Tea Cozy</p>
                                 <div class="footer-contact mt-20">
                                     <ul>
                                         <li>(+008) 254 254 254 25487</li>
@@ -69,8 +59,8 @@
                                 </div>
                                 <div class="footer-contact mt-20">
                                     <ul>
-                                        <li>yourmail@example.com</li>
-                                        <li>example@admin.com</li>
+                                        <li>admin@example.com</li>
+                                        <li>admin@admin.com</li>
                                     </ul>
                                 </div>
                             </div>
@@ -84,7 +74,7 @@
                 <div class="row">
                     <div class="col-md-6">
                         <div class="copyright">
-                            <p>Copyright © <a href="#">SabujCha</a>. All Right Reserved.</p>
+                            <p>Copyright © <a href="#">TeaCozy</a>. All Right Reserved.</p>
                         </div>
                     </div>
                     <div class="col-md-6">

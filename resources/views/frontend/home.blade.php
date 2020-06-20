@@ -309,7 +309,5 @@
                 </div>
             </div>
         </div>
-    </div>
-
-    <!-- Newsletter Araea End -->
+    </div><!-- Newsletter Araea End -->
 @endsection

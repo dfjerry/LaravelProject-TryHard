@@ -12,9 +12,7 @@
                 <!-- Light table -->
                 <form role="form" action="{{url("/admin/update-blog/{$blog->__get("id")}")}}" method="post" enctype="multipart/form-data">
                     @method("PUT")
-                    {{--                    // method"POST" dùng để báo route--}}
                     @csrf
-                    {{--                    // dùng để tạo mã token nếu thiếu sẽ báo lỗi 419--}}
                     <div class="card-body">
                         <div class="form-group">
                             <label>Blog Name</label>
@@ -25,8 +23,19 @@
                         </div>
                         <div class="form-group">
                             <label>Blog Image</label>
-                            <p>Old Image</p><img src="{{$blog->getImage()}}" width="60px"/>
-                            <input type="file" name="blog_image" class="form-control" placeholder="New Blog Name"/>
+                            <input type="text" name="blog_image" class="form-control" placeholder="New Blog Name"/>
+                        </div>
+                        <div class="form-group">
+                            <label>Blog Image1</label>
+                            <input type="text" name="blog_image1" class="form-control" placeholder="New Blog Name"/>
+                        </div>
+                        <div class="form-group">
+                            <label>Blog Image2</label>
+                            <input type="text" name="blog_image2" class="form-control" placeholder="New Blog Name"/>
+                        </div>
+                        <div class="form-group">
+                            <label>Blog Image3</label>
+                            <input type="text" name="blog_image3" class="form-control" placeholder="New Blog Name"/>
                         </div>
                         <div class="form-group">
                             <label>Author</label>
@@ -56,8 +65,6 @@
                             <span class="error invalid-feedback">{{$message}}</span>
                             @enderror
                         </div>
-
-                        {{--                        // biến error để lưu lỗi--}}
                     </div>
                     <!-- /.card-body -->
                     <div class="card-footer">

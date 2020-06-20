@@ -4,7 +4,7 @@
     <div class="breadcrumb-area bg-image-3 ptb-150">
         <div class="container">
             <div class="breadcrumb-content text-center">
-                <h3>BLOG LEFT SIDEBAR</h3>
+                <h3>BLOG</h3>
                 <ul>
                     <li><a href="{{url("/home")}}">Home</a></li>
                     <li class="active">Blog</li>
@@ -24,7 +24,7 @@
 
                             <div class="blog-img mb-30">
                                 <a href="{{$bl->getBlogUrl()}}">
-                                    <img src="{{$bl->getImage()}}" width="1200px" height="" alt="">
+                                    <img src="{{$bl->__get("blog_image")}}" width="1200px" height="700px" alt="">
                                 </a>
                             </div>
                             <div class="blog-content">
@@ -85,7 +85,7 @@
                         </div>
                         <div class="blog-widget mb-40">
                             <div class="blog-author">
-                                <a href="#"><img src="assets/img/blog/blog-author.png" alt=""></a>
+                                <a href="#"><img src="{{url("https://www.upsieutoc.com/images/2020/06/20/Capturecf32142a2ade1055.png")}}" width="270px" height="300px" alt=""></a>
                                 <h4><a href="#">Thanh Tuan</a></h4>
                                 <span>Try_hard, SEO</span>
                             </div>
@@ -94,9 +94,9 @@
                             <h4 class="blog-widget-title mb-25">Recent post</h4>
                             @foreach($blog as  $blog)
                             <div class="blog-recent-post">
-                                <div class="recent-post-wrapper mb-25">
+                                <div class="recent-post-wrapper mb-25 pb-4">
                                     <div class="recent-post-img">
-                                        <a href="{{$bl->getBlogUrl()}}"><img src="{{$blog->getImage()}}" alt=""></a>
+                                        <a href="{{$bl->getBlogUrl()}}"><img src="{{$blog->__get("blog_image")}}" alt="" width="100px" height="100px"></a>
                                     </div>
                                     <div class="recent-post-content">
                                         <h4><a href="{{$bl->getBlogUrl()}}">{{$blog->__get("title")}}</a></h4>
@@ -107,11 +107,11 @@
                                 @endforeach
                         </div>
                         <div class="blog-widget mb-40">
-                            <h4 class="blog-widget-title mb-25">categories</h4>
+                            <h4 class="blog-widget-title mb-25">All Post</h4>
                             <div class="blog-categori">
-                                @foreach(\App\Category::all() as $cat)
+                                @foreach(\App\Blog::all() as $bl)
                                 <ul>
-                                    <li><a href="#">{{$cat->__get("category_name")}}</a></li>
+                                    <li><a style="text-decoration: none;" href="{{$bl->getBlogUrl()}}">{{$bl->__get("title")}}</a></li>
 
                                 </ul>
                                     @endforeach
@@ -132,10 +132,10 @@
                             <h4 class="blog-widget-title mb-20">follow us </h4>
                             <div class="blog-sidebar-social">
                                 <ul>
-                                    <li><a href="#"><i class="ion-social-instagram"></i></a></li>
-                                    <li><a href="#"><i class="ion-social-skype"></i></a></li>
-                                    <li><a href="#"><i class="ion-social-twitter"></i></a></li>
-                                    <li><a href="#"><i class="ion-social-facebook"></i></a></li>
+                                    <li><a href="https://www.facebook.com/tiendat21896"><i class="ion-social-instagram"></i></a></li>
+                                    <li><a href="https://www.facebook.com/tiendat21896"><i class="ion-social-skype"></i></a></li>
+                                    <li><a href="https://www.facebook.com/tiendat21896"><i class="ion-social-twitter"></i></a></li>
+                                    <li><a href="https://www.facebook.com/tiendat21896"><i class="ion-social-facebook"></i></a></li>
                                 </ul>
                             </div>
                         </div>

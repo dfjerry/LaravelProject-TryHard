@@ -10,10 +10,6 @@
                     <h2 class="mb-0 col-lg-9 float-left">Blog List</h2>
                     <div class="mb-0 col-lg-3 float-right d-flex justify-content-end">
                         <a href="{{url("/admin/new-blog")}}" class="btn btn-sm btn-neutral">Create</a>
-                        {{--                        @foreach($categories as $category)--}}
-                        {{--                            <a href="{{url("/admin/edit-category/{$category->__get("id")}")}}" class="btn btn-sm btn-neutral">Update</a>--}}
-                        {{--                        @endforeach--}}
-
                     </div>
                 </div>
                 <!-- Light table -->
@@ -29,6 +25,18 @@
                             </th>
                             <th scope="col" style="font-size: 14px; text-transform: capitalize!important;" class="sort"
                                 data-sort="name">Blog Image
+                            </th>
+                            <th scope="col" style="font-size: 14px; text-transform: capitalize!important;" class="sort"
+                                data-sort="name">Blog Image1
+                            </th>
+                            <th scope="col" style="font-size: 14px; text-transform: capitalize!important;" class="sort"
+                                data-sort="name">Blog Image2
+                            </th>
+                            <th scope="col" style="font-size: 14px; text-transform: capitalize!important;" class="sort"
+                                data-sort="name">Blog Image3
+                            </th>
+                            <th scope="col" style="font-size: 14px; text-transform: capitalize!important;" class="sort"
+                                data-sort="name">Blog Content
                             </th>
                             <th scope="col" style="font-size: 14px; text-transform: capitalize!important;" class="sort"
                                 data-sort="name">Created At
@@ -49,7 +57,11 @@
                             <tr>
                                 <td>{{$blog->__get("id")}}</td>
                                 <td>{{$blog->__get("title")}}</td>
-                                <td><img src="{{$blog->getImage()}}" width="60px"/></td>
+                                <td><img src="{{$blog->__get("blog_image")}}" width="60px"/></td>
+                                <td><img src="{{$blog->__get("blog_image1")}}" width="60px"/></td>
+                                <td><img src="{{$blog->__get("blog_image2")}}" width="60px"/></td>
+                                <td><img src="{{$blog->__get("blog_image3")}}" width="60px"/></td>
+                                <td>{{$blog->__get("blog_content")}}</td>
                                 <td>{{$blog->__get("created_at")}}</td>
                                 <td>{{$blog->__get("updated_at")}}</td>
                                 <td>
@@ -67,9 +79,7 @@
                         </tbody>
                     </table>
                 </div>
-                <!-- Card footer -->
             </div>
         </div>
     </div>
-{{--    {!! $categories->links() !!}--}}
 @endsection
