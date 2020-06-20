@@ -145,4 +145,42 @@
             </div>
         </div>
     </div>
+
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">x</span></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-5 col-sm-5 col-xs-12">
+                            <!-- Thumbnail Large Image start -->
+                            <div class="tab-content">
+                                <div id="pro-1" class="tab-pane fade show active">
+                                    <img src="{{$pro->getImage()}}" alt="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-7 col-sm-7 col-xs-12">
+                            <div class="modal-pro-content">
+                                <h3>{{$pro->__get("product_name")}}</h3>
+                                <div class="product-price-wrapper">
+                                    <span>{{"$".number_format($pro->__get("price"))}}</span>
+                                </div>
+                                <p>{{$pro->__get("product_desc")}}</p>
+                                <div class="product-quantity d-flex">
+                                    <div class="cart-plus-minus">
+                                        <input class="cart-plus-minus-box" type="text" name="qtybutton" value="02">
+                                    </div>
+                                    <button>Add to cart</button>
+                                </div>
+                                <span><i class="fa fa-check"></i> In stock</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 @endsection
