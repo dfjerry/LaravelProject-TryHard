@@ -122,7 +122,7 @@
                                             <a class="action-cart" href="javascript: void(0);"  onclick="addToCart({{$p->__get("id")}});" >
                                                 <i class="fa fa-shopping-cart"></i>
                                             </a>
-                                            <a class="action-compare" href="#" data-target="#examplemModal" data-toggle="modal" title="Quick View">
+                                            <a class="action-compare" href="#" data-target="#exampleModal" data-toggle="modal" title="Quick View">
                                                 <i class="ion-ios-search-strong"></i>
                                             </a>
                                         </div>
@@ -197,58 +197,20 @@
                             <!-- Thumbnail Large Image start -->
                             <div class="tab-content">
                                 <div id="pro-1" class="tab-pane fade show active">
-                                    <img src="assets/img/product-details/product-detalis-l1.jpg" alt="">
-                                </div>
-                                <div id="pro-2" class="tab-pane fade">
-                                    <img src="assets/img/product-details/product-detalis-l2.jpg" alt="">
-                                </div>
-                                <div id="pro-3" class="tab-pane fade">
-                                    <img src="assets/img/product-details/product-detalis-l3.jpg" alt="">
-                                </div>
-                                <div id="pro-4" class="tab-pane fade">
-                                    <img src="assets/img/product-details/product-detalis-l4.jpg" alt="">
+                                    <img src="{{$p->getImage()}}" alt="">
                                 </div>
                             </div>
                             <!-- Thumbnail Large Image End -->
                             <!-- Thumbnail Image End -->
-                            <div class="product-thumbnail">
-                                <div class="thumb-menu owl-carousel nav nav-style" role="tablist">
-                                    <a class="active" data-toggle="tab" href="#pro-1"><img src="assets/img/product-details/product-detalis-s1.jpg" alt=""></a>
-                                    <a data-toggle="tab" href="#pro-2"><img src="assets/img/product-details/product-detalis-s2.jpg" alt=""></a>
-                                    <a data-toggle="tab" href="#pro-3"><img src="assets/img/product-details/product-detalis-s3.jpg" alt=""></a>
-                                    <a data-toggle="tab" href="#pro-4"><img src="assets/img/product-details/product-detalis-s4.jpg" alt=""></a>
-                                </div>
-                            </div>
                             <!-- Thumbnail image end -->
                         </div>
                         <div class="col-md-7 col-sm-7 col-xs-12">
                             <div class="modal-pro-content">
                                 <h3>{{$p->__get("product_name")}}</h3>
                                 <div class="product-price-wrapper">
-                                    <span class="product-price-old">£162.00 </span>
-                                    <span>£120.00</span>
+                                    <span>{{"$".number_format($p->__get("price"))}} </span>
                                 </div>
-                                <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet.</p>
-                                <div class="quick-view-select">
-                                    <div class="select-option-part">
-                                        <label>Size*</label>
-                                        <select class="select">
-                                            <option value="">S</option>
-                                            <option value="">M</option>
-                                            <option value="">L</option>
-                                        </select>
-                                    </div>
-                                    <div class="quickview-color-wrap">
-                                        <label>Color*</label>
-                                        <div class="quickview-color">
-                                            <ul>
-                                                <li class="blue">b</li>
-                                                <li class="red">r</li>
-                                                <li class="pink">p</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
+                                <p>{{$p->__get("product_desc")}}</p>
                                 <div class="product-quantity">
                                     <div class="cart-plus-minus">
                                         <input class="cart-plus-minus-box" type="text" name="qtybutton" value="02">

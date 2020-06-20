@@ -96,13 +96,6 @@
                                 </div>
                             </form>
                         </div>
-                        <div class="pro-dec-categories">
-                            <ul>
-                                <li class="categories-title">Categories:</li>
-                                <li><a href="#"></a></li>
-
-                            </ul>
-                        </div>
                         <div class="pro-dec-social">
                             <ul>
                                 <li><a class="tweet" href="#"><i class="ion-social-twitter"></i> Tweet</a></li>

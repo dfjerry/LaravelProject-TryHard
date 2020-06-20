@@ -157,38 +157,18 @@
                             <!-- Thumbnail Large Image start -->
                             <div class="tab-content">
                                 <div id="pro-1" class="tab-pane fade show active">
-                                    <img src="assets/img/product-details/product-detalis-l1.jpg" alt="">
-                                </div>
-                                <div id="pro-2" class="tab-pane fade">
-                                    <img src="assets/img/product-details/product-detalis-l2.jpg" alt="">
-                                </div>
-                                <div id="pro-3" class="tab-pane fade">
-                                    <img src="assets/img/product-details/product-detalis-l3.jpg" alt="">
-                                </div>
-                                <div id="pro-4" class="tab-pane fade">
-                                    <img src="assets/img/product-details/product-detalis-l4.jpg" alt="">
+                                    <img src="{{$pro->getImage()}}" alt="">
                                 </div>
                             </div>
-                            <!-- Thumbnail Large Image End -->
-                            <!-- Thumbnail Image End -->
-                            <div class="product-thumbnail">
-                                <div class="thumb-menu owl-carousel nav nav-style" role="tablist">
-                                    <a class="active" data-toggle="tab" href="#pro-1"><img src="assets/img/product-details/product-detalis-s1.jpg" alt=""></a>
-                                    <a data-toggle="tab" href="#pro-2"><img src="assets/img/product-details/product-detalis-s2.jpg" alt=""></a>
-                                    <a data-toggle="tab" href="#pro-3"><img src="assets/img/product-details/product-detalis-s3.jpg" alt=""></a>
-                                    <a data-toggle="tab" href="#pro-4"><img src="assets/img/product-details/product-detalis-s4.jpg" alt=""></a>
-                                </div>
-                            </div>
-                            <!-- Thumbnail image end -->
                         </div>
                         <div class="col-md-7 col-sm-7 col-xs-12">
                             <div class="modal-pro-content">
                                 <h3>{{$pro->__get("product_name")}}</h3>
                                 <div class="product-price-wrapper">
-                                    <span>£120.00</span>
+                                    <span>{{"$".number_format($pro->__get("price"))}}</span>
                                 </div>
-                                <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet.</p>
-                                <div class="product-quantity">
+                                <p>{{$pro->__get("product_desc")}}</p>
+                                <div class="product-quantity d-flex">
                                     <div class="cart-plus-minus">
                                         <input class="cart-plus-minus-box" type="text" name="qtybutton" value="02">
                                     </div>

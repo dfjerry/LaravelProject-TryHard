@@ -77,6 +77,7 @@ class HomeController extends Controller
 
     public function product(Product $product)
     {
+        $category = Category::all();
         if (!session()->has("view_count_{$product->__get("id")}")) {// kiểm tra xem sesion  nếu chưa có sẽ đăng lên
             $product->increment("view_count");     // tự tăng lên 1 mỗi lần user ấn vào xem sản phẩm
             session(["view_count{$product->__get("id")} => true"]);// lấy session ra 1 session sẽ có giá trị lưu giữ trong vòng 2 tiếng
@@ -84,6 +85,7 @@ class HomeController extends Controller
         $relativeProducts = Product::with("Category")->paginate(4);//nạp sẵn phần cần nạp trong collection, lấy theo kiểu quan hệ
 
         return view("frontend.product", [
+            "category" => $category,
             "product" => $product,
             "relativeProduct" => $relativeProducts,
         ]);
