@@ -3,22 +3,22 @@
     <div class="header-bottom">
         <div class="container">
             <div class="row">
-                <div class="col-lg-2 col-md-3 col-4">
+                <div class="col-lg-2 col-md-2 col-2">
                     <div class="logo">
                         <a href="/home">
                             <img alt="" src="{{url("assets/img/logo/logo.png")}}">
                         </a>
                     </div>
                 </div>
-                <div class="col-lg-8 col-md-6 col-7">
-                    <div class="header-bottom-right">
+                <div class="col-lg-9 col-md-8 col-8">
+                    <div class="header-bottom-right ">
                         <div class="main-menu">
                             <nav>
                                 <ul>
-                                    <li class="top-hover col-lg-2"><a href="{{url("/home")}}">home</a>
+                                    <li class="top-hover "><a href="{{url("/home")}}">home</a>
                                     </li>
 
-                                    <li class="mega-menu-position top-hover"><a href="#">shop</a>
+                                    <li class="mega-menu-position top-hover"><a href="{{url("/shop")}}">shop</a>
                                         <ul class="mega-menu">
                                             <li>
                                                 <ul>
@@ -29,17 +29,18 @@
                                             </li>
                                         </ul>
                                     </li>
-                                    <li class="col-lg-2"><a href="{{url("/about")}}">about</a></li>
-                                    <li class="col-lg-2"><a href="{{url("/contact")}}">contact</a></li>
-                                    <li class="col-lg-4">
+                                    <li><a href="{{url("/about")}}">about</a></li>
+                                    <li><a href="{{url("/blog")}}">blog</a></li>
+                                    <li><a href="{{url("/contact")}}">contact</a></li>
+                                    <li>
                                         <div class="header-bottom ">
                                             <div class="header">
                                                 <form action="{{url("/search")}}" method="post">
                                                     @method("POST")
                                                     @csrf
-                                                    <div class="md-form active-pink-2 mb-3">
+                                                    <div class="md-form active-pink-2 mb-3" style="position: relative;">
                                                         <input class="search" id="search" name="search" type="text" placeholder="Search"/>
-                                                        <button class="button__search" type="submit"><i class="fas fa-search"></i></button>
+                                                        <button class="button__search" style=" background-color: transparent;position: absolute;left: 160px" type="submit"><i class="fas fa-search"></i></button>
                                                     </div>
                                                 </form>
                                             </div>
@@ -48,7 +49,7 @@
                                 </ul>
                             </nav>
                         </div>
-                        <div class="header-cart">
+                        <div class="header-cart col-lg-1">
                             <a href="#">
                                 <div class="cart-icon">
                                     <i class="ti-shopping-cart"></i>
@@ -72,24 +73,24 @@
                             </a>
                             <div class="shopping-cart-content">
                                 @foreach($products as $p)
-                                <ul>
-                                    <li class="single-shopping-cart">
-                                        <div class="shopping-cart-img">
-                                            <a href="#"><img style="width: 70px; height: 70px " src="{{$p->getImage()}} "></a>
-                                        </div>
-                                        <div class="shopping-cart-title">
-                                            <p><a href="#">{{$p->__get("product_name")}}</a></p>
+                                    <ul>
+                                        <li class="single-shopping-cart">
+                                            <div class="shopping-cart-img">
+                                                <a href="#"><img style="width: 70px; height: 70px " src="{{$p->getImage()}} "></a>
+                                            </div>
+                                            <div class="shopping-cart-title">
+                                                <p><a href="#">{{$p->__get("product_name")}}</a></p>
 
-                                            <p>Qty:<span>{{$p->__get("qty")}}</span> </p>
-{{--                                            <span class="cart-plus-minus-box" type="text" value="" name="qtybutton"></span>--}}
+                                                <p>Qty:<span>{{$p->__get("qty")}}</span> </p>
+                                                {{--                                            <span class="cart-plus-minus-box" type="text" value="" name="qtybutton"></span>--}}
 
-                                            <span >Price: {{$p->getPrice()}}</span>
-                                        </div>
-                                        <div class="shopping-cart-delete">
-                                            <a href="#"><i class="ion ion-close"></i></a>
-                                        </div>
-                                    </li>
-                                </ul>
+                                                <span >Price: {{$p->getPrice()}}</span>
+                                            </div>
+                                            <div class="shopping-cart-delete">
+                                                <a href="#"><i class="ion ion-close"></i></a>
+                                            </div>
+                                        </li>
+                                    </ul>
                                 @endforeach
                                 <div class="shopping-cart-total">
                                     <h4>Total : <span class="shop-total">{{$grandTotal}} </span></h4>
@@ -103,7 +104,7 @@
 
                     </div>
                 </div>
-                <div class="logout-button col-lg-2">
+                <div class="logout-button col-lg-1 col-md-2 col-2">
                     <div class="logout">
                         <a class="dropdown-item" href="{{ route('logout') }}"
                            onclick="event.preventDefault();

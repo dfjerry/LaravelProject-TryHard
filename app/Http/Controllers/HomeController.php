@@ -107,6 +107,9 @@ class HomeController extends Controller
     {
         return view("frontend.myaccount");
     }
+    public function shop(){
+        return view("frontend.shop");
+    }
 
     public function addToCart(Product $product, Request $request)
     {

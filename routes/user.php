@@ -18,7 +18,7 @@ Route::post('/search', "HomeController@postSearch");
 Route::get("/about", "HomeController@about");
 Route::get("/contact", "HomeController@contact");
 Route::get("/myaccount", "HomeController@myaccount");
-
+Route::get("/shop","HomeController@shop");
 
 
 Route::post("/cart/add/{product}", "HomeController@addToCart");
