@@ -53,7 +53,7 @@
                                             <div class="product-wrapper">
                                                 <div class="product-img">
                                                     <a href="{{$p->getProductUrl()}}">
-                                                        <img alt="" src="{{$p->getImage()}}">
+                                                        <img alt="" src="{{$p->__get("product_image")}}">
                                                     </a>
                                                     <span>-30%</span>
                                                     <div class="product-action">

@@ -37,7 +37,7 @@
                     <div class="product-wrapper">
                         <div class="product-img">
                             <a href="{{$mow->getProductUrl()}}">
-                                <img alt="" src="{{$mow->getImage()}}" style="width: 268px; height: 268px">
+                                <img alt="" src="{{$mow->__get("product_image")}}" style="width: 268px; height: 268px">
                             </a>
                             <span>-20%</span>
                             <span style="left: 210px">View:{{$mow->__get("view_count")}}</span>
@@ -114,7 +114,7 @@
                                 <div class="product-wrapper mb-30">
                                     <div class="product-img" style="width: 270px; height: 270px">
                                         <a href="{{$p->getProductUrl()}}">
-                                            <img alt="" src="{{$p->getImage()}}" style="width: 268px; height: 268px">
+                                            <img alt="" src="{{$p->__get("product_image")}}" style="width: 268px; height: 268px">
                                         </a>
                                         <span>-20%</span>
                                         <span style="left: 210px">View:{{$p->__get("view_count")}}</span>
@@ -197,7 +197,7 @@
                             <!-- Thumbnail Large Image start -->
                             <div class="tab-content">
                                 <div id="pro-1" class="tab-pane fade show active">
-                                    <img src="{{$p->getImage()}}" alt="">
+                                    <img src="{{$p->__get("product_image")}}" alt="">
                                 </div>
                             </div>
                             <!-- Thumbnail Large Image End -->

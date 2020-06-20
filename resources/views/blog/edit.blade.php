@@ -28,6 +28,35 @@
                             <p>Old Image</p><img src="{{$blog->getImage()}}" width="60px"/>
                             <input type="file" name="blog_image" class="form-control" placeholder="New Blog Name"/>
                         </div>
+                        <div class="form-group">
+                            <label>Author</label>
+                            <input type="text" value="{{$blog->__get("author")}}" name="author" class="form-control @error("author") is-invalid @enderror" placeholder="Author">
+                            @error("author")
+                            <span class="error invalid-feedback">{{$message}}</span>
+                            @enderror
+                        </div>
+                        <div class="form-group">
+                            <label>Date Post</label>
+                            <input type="text" value="{{$blog->__get("date_post")}}" name="date_post" class="form-control @error("date_post") is-invalid @enderror" placeholder="Date Post">
+                            @error("date_post")
+                            <span class="error invalid-feedback">{{$message}}</span>
+                            @enderror
+                        </div>
+                        <div class="form-group">
+                            <label>Description</label>
+                            <input type="text" value="{{$blog->__get("blog_desc")}}" name="blog_desc" class="form-control @error("blog_desc") is-invalid @enderror" placeholder="Blog Desc">
+                            @error("blog_desc")
+                            <span class="error invalid-feedback">{{$message}}</span>
+                            @enderror
+                        </div>
+                        <div class="form-group">
+                            <label>Blog Content</label>
+                            <input type="text" value="{{$blog->__get("blog_content")}}" name="blog_content" class="form-control @error("blog_content") is-invalid @enderror" placeholder="Blog Content">
+                            @error("blog_content")
+                            <span class="error invalid-feedback">{{$message}}</span>
+                            @enderror
+                        </div>
+
                         {{--                        // biến error để lưu lỗi--}}
                     </div>
                     <!-- /.card-body -->

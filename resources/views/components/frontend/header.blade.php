@@ -86,7 +86,7 @@
                                         <li class="single-shopping-cart">
                                             <div class="shopping-cart-img">
                                                 <a href="#"><img style="width: 70px; height: 70px "
-                                                                 src="{{$p->getImage()}} "></a>
+                                                                 src="{{$p->__get("product_image")}} "></a>
                                             </div>
                                             <div class="shopping-cart-title">
                                                 <p><a href="#">{{$p->__get("product_name")}}</a></p>

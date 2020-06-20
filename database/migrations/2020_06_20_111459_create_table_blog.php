@@ -13,7 +13,7 @@ class CreateTableBlog extends Migration
      */
     public function up()
     {
-        Schema::create('blogs', function (Blueprint $table) {
+        Schema::create('blog', function (Blueprint $table) {
             $table->id();
             $table->string("title");
             $table->string("blog_image")->nullable();
@@ -32,6 +32,6 @@ class CreateTableBlog extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('blogs');
+        Schema::dropIfExists('blog');
     }
 }

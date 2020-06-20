@@ -62,7 +62,7 @@ class BlogController extends Controller
     }
 
     public function updateBlog($id, Request $request){
-        $blog = Blog::findOrFail();
+        $blog = Blog::findOrFail($id);
         $request->validate([
             "title" =>  "required|min:6|unique:blog,title,{$id}"
         ]);
@@ -97,7 +97,7 @@ class BlogController extends Controller
         return redirect()->to("admin/list-blog");
     }
 
-    public function deteleBlog($id){
+    public function deleteBlog($id){
         $blog = Blog::findOrFail($id);
         try{
             $blog->delete();

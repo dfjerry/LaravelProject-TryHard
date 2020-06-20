@@ -55,7 +55,7 @@
                                         <div class="product-wrapper">
                                             <div class="product-img">
                                                 <a href="{{$pro->getProductUrl()}}">
-                                                    <img alt="" src="{{$pro->getImage()}}"
+                                                    <img alt="" src="{{$pro->__get("product_image")}}"
                                                          style="width: 268px; height: 268px">
                                                 </a>
                                                 <span>-30%</span>
@@ -158,7 +158,7 @@
                             <!-- Thumbnail Large Image start -->
                             <div class="tab-content">
                                 <div id="pro-1" class="tab-pane fade show active">
-                                    <img src="{{$pro->getImage()}}" alt="">
+                                    <img src="{{$pro->__get("product_image")}}" alt="">
                                 </div>
                             </div>
                         </div>

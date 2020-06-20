@@ -6,10 +6,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class Blog extends Model
 {
-    protected $table = "blogs";
+    protected $table = "blog";
 
     public $fillable = [
         "title",
+        "slug",
         "blog_image",
         "author",
         "date_post",
@@ -22,5 +23,11 @@ class Blog extends Model
             return asset("media/default.jpg");
         }
         return asset($this->__get("blog_image"));
+    }
+    public function getBlogUrl(){
+        return url("/blogdetail/{$this->__get("slug")}");
+    }
+    public function getSlug(){
+        return $this->__get("slug");
     }
 }

@@ -25,12 +25,45 @@
                         </div>
                         <div class="form-group">
                             <div><label for="exampleInputEmail1">Product Image</label></div>
-                            <img src="{{$product->getImage()}}" style="width: 70px; height: 70px;"/>
-                            <input class="form-control @error("product_image") is-invalid @enderror" type="file" name="product_image" />
+                            <img src="{{$product->get("product_image")}}" style="width: 70px; height: 70px;"/>
+                            <input class="form-control @error("product_image") is-invalid @enderror" type="text" name="product_image" />
                             @error("product_image")
                             <span class="error invalid-feedback">{{$message}}</span>
                             @enderror
                         </div>
+                        <div class="form-group">
+                            <div><label for="exampleInputEmail1">Product Image1</label></div>
+                            <img src="{{$product->get("product_image1")}}" style="width: 70px; height: 70px;"/>
+                            <input class="form-control @error("product_image1") is-invalid @enderror" type="text" name="product_image1" />
+                            @error("product_image1")
+                            <span class="error invalid-feedback">{{$message}}</span>
+                            @enderror
+                        </div>
+                        <div class="form-group">
+                            <div><label for="exampleInputEmail1">Product Image2</label></div>
+                            <img src="{{$product->get("product_image2")}}" style="width: 70px; height: 70px;"/>
+                            <input class="form-control @error("product_image2") is-invalid @enderror" type="text" name="product_image2" />
+                            @error("product_image2")
+                            <span class="error invalid-feedback">{{$message}}</span>
+                            @enderror
+                        </div>
+                        <div class="form-group">
+                            <div><label for="exampleInputEmail1">Product Image3</label></div>
+                            <img src="{{$product->get("product_image3")}}" style="width: 70px; height: 70px;"/>
+                            <input class="form-control @error("product_image3") is-invalid @enderror" type="text" name="product_image3" />
+                            @error("product_image3")
+                            <span class="error invalid-feedback">{{$message}}</span>
+                            @enderror
+                        </div>
+                        <div class="form-group">
+                            <div><label for="exampleInputEmail1">Product Image4</label></div>
+                            <img src="{{$product->get("product_image4")}}" style="width: 70px; height: 70px;"/>
+                            <input class="form-control @error("product_image4") is-invalid @enderror" type="text" name="product_image4" />
+                            @error("product_image4")
+                            <span class="error invalid-feedback">{{$message}}</span>
+                            @enderror
+                        </div>
+
                         <div class="form-group">
                             <label>Product Desc</label>
                             <textarea name="product_desc" value="{{$product->__get("product_desc")}}" class="form-control @error("product_desc") is-invalid @enderror" placeholder="New Product Desc"></textarea>

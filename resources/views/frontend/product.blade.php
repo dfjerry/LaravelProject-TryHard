@@ -7,7 +7,7 @@
                 <h3>SHOP PAGE</h3>
                 <ul>
                     <li><a href="{{url("/home")}}">Home</a></li>
-                    <li class="active"></li>
+                    <li class="active">Product Detail</li>
                 </ul>
             </div>
         </div>
@@ -19,32 +19,32 @@
             <div class="row">
                 <div class="col-lg-6 col-md-12">
                     <div class="product-details-img">
-                        <img class="zoompro" src="{{$product->getImage()}}"
+                        <img class="zoompro" src="{{$product->__get("product_image")}}"
                              data-zoom-image="assets/img/product-details/product-detalis-bl1.jpg" alt="zoom"/>
                         <div id="gallery" class="mt-20 product-dec-slider owl-carousel">
                             <a data-image="assets/img/product-details/product-detalis-l1.jpg"
                                data-zoom-image="assets/img/product-details/product-detalis-bl1.jpg">
-                                <img src="assets/img/product-details/product-detalis-s1.jpg" alt="">
+                                <img  width="100px" height="100px" src="{{$product->__get("product_image1")}}" alt="">
                             </a>
                             <a data-image="assets/img/product-details/product-detalis-l2.jpg"
                                data-zoom-image="assets/img/product-details/product-detalis-bl2.jpg">
-                                <img src="assets/img/product-details/product-detalis-s2.jpg" alt="">
+                                <img width="100px" height="100px" src="{{$product->__get("product_image2")}}" alt="">
                             </a>
                             <a data-image="assets/img/product-details/product-detalis-l3.jpg"
                                data-zoom-image="assets/img/product-details/product-detalis-bl3.jpg">
-                                <img src="assets/img/product-details/product-detalis-s3.jpg" alt="">
+                                <img width="100px" height="100px" src="{{$product->__get("product_image3")}}" alt="">
                             </a>
                             <a data-image="assets/img/product-details/product-detalis-l4.jpg"
                                data-zoom-image="assets/img/product-details/product-detalis-bl4.jpg">
-                                <img src="assets/img/product-details/product-detalis-s4.jpg" alt="">
+                                <img width="100px" height="100px" src="{{$product->__get("product_image4")}}" alt="">
                             </a>
                             <a data-image="assets/img/product-details/product-detalis-l5.jpg"
                                data-zoom-image="assets/img/product-details/product-detalis-bl5.jpg">
-                                <img src="assets/img/product-details/product-detalis-s5.jpg" alt="">
+                                <img width="100px" height="100px" src="{{$product->__get("product_image1")}}" alt="">
                             </a>
                             <a data-image="assets/img/product-details/product-detalis-l2.jpg"
                                data-zoom-image="assets/img/product-details/product-detalis-bl2.jpg">
-                                <img src="assets/img/product-details/product-detalis-s2.jpg" alt="">
+                                <img width="100px" height="100px" src="{{$product->__get("product_image2")}}" alt="">
                             </a>
                         </div>
                         <span>-29%</span>
@@ -73,7 +73,7 @@
                         <div class="in-stock">
                             <span>Available: <span>In stock</span></span>
                         </div>
-                        <p>Descricribe{{$product->__get("product_desc")}}</p>
+                        <p>Descricribe: {{$product->__get("product_desc")}}</p>
                         <div class="quality-add-to-cart">
                             <form method="POST" action="{{url("/cart/add/{$product->__get("id")}")}}">
                                 @method("POST")
@@ -236,185 +236,39 @@
                 </div>
             </div>
             <div class="featured-product-active hot-flower owl-carousel product-nav">
-                <div class="product-wrapper">
-                    <div class="product-img">
-                        <a href="product-details.html">
-                            <img alt="" src="assets/img/product/product-1.jpg">
-                        </a>
-                        <span>-30%</span>
-                        <div class="product-action">
-                            <a class="action-wishlist" href="#" title="Wishlist">
-                                <i class="ion-android-favorite-outline"></i>
+                @foreach($relativeProduct as $pro)
+                    <div class="product-wrapper">
+                        <div class="product-img">
+                            <a href="{{$pro->getProductUrl()}}">
+                                <img alt="" src="{{$pro->__get("product_image")}}">
                             </a>
-                            <a class="action-cart" href="#" title="Add To Cart">
-                                <i class="ion-ios-shuffle-strong"></i>
-                            </a>
-                            <a class="action-compare" href="#" data-target="#exampleModal" data-toggle="modal"
-                               title="Quick View">
-                                <i class="ion-ios-search-strong"></i>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="product-content text-left">
-                        <div class="product-hover-style">
-                            <div class="product-title">
-                                <h4>
-                                    <a href="product-details.html">Le Bongai Tea</a>
-                                </h4>
-                            </div>
-                            <div class="cart-hover">
-                                <h4><a href="product-details.html">+ Add to cart</a></h4>
+                            <span>-30%</span>
+                            <div class="product-action">
+                                <a class="action-cart" href="javascript: void(0);"  onclick="addToCart({{$pro->__get("id")}});" >
+                                    <i class="fa fa-shopping-cart"></i>
+                                </a>
+                                <a class="action-compare" href="{{url("/modal/{$pro->__get("id")}")}}" data-target="#exampleModal" data-toggle="modal" title="Quick View">
+                                    <i class="ion-ios-search-strong"></i>
+                                </a>
                             </div>
                         </div>
-                        <div class="product-price-wrapper">
-                            <span>$100.00 -</span>
-                            <span class="product-price-old">$120.00 </span>
-                        </div>
-                    </div>
-                </div>
-                <div class="product-wrapper">
-                    <div class="product-img">
-                        <a href="product-details.html">
-                            <img alt="" src="assets/img/product/product-2.jpg">
-                        </a>
-                        <div class="product-action">
-                            <a class="action-wishlist" href="#" title="Wishlist">
-                                <i class="ion-android-favorite-outline"></i>
-                            </a>
-                            <a class="action-cart" href="#" title="Add To Cart">
-                                <i class="ion-ios-shuffle-strong"></i>
-                            </a>
-                            <a class="action-compare" href="#" data-target="#exampleModal" data-toggle="modal"
-                               title="Quick View">
-                                <i class="ion-ios-search-strong"></i>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="product-content text-left">
-                        <div class="product-hover-style">
-                            <div class="product-title">
-                                <h4>
-                                    <a href="product-details.html">Society Ice Tea</a>
-                                </h4>
+                        <div class="product-content text-left">
+                            <div class="product-hover-style">
+                                <div class="product-title">
+                                    <h4>
+                                        <a href="product-details.html">{{$pro->__get("product_name")}}</a>
+                                    </h4>
+                                </div>
+                                <div class="cart-hover">
+                                    <h4><a href="product-details.html">+ Add to cart</a></h4>
+                                </div>
                             </div>
-                            <div class="cart-hover">
-                                <h4><a href="product-details.html">+ Add to cart</a></h4>
+                            <div class="product-price-wrapper">
+                                <span>{{$pro->__get("price")}}</span>
                             </div>
                         </div>
-                        <div class="product-price-wrapper">
-                            <span>$100.00 -</span>
-                            <span class="product-price-old">$120.00 </span>
-                        </div>
                     </div>
-                </div>
-                <div class="product-wrapper">
-                    <div class="product-img">
-                        <a href="product-details.html">
-                            <img alt="" src="assets/img/product/product-3.jpg">
-                        </a>
-                        <span>-30%</span>
-                        <div class="product-action">
-                            <a class="action-wishlist" href="#" title="Wishlist">
-                                <i class="ion-android-favorite-outline"></i>
-                            </a>
-                            <a class="action-cart" href="#" title="Add To Cart">
-                                <i class="ion-ios-shuffle-strong"></i>
-                            </a>
-                            <a class="action-compare" href="#" data-target="#exampleModal" data-toggle="modal"
-                               title="Quick View">
-                                <i class="ion-ios-search-strong"></i>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="product-content text-left">
-                        <div class="product-hover-style">
-                            <div class="product-title">
-                                <h4>
-                                    <a href="product-details.html">Green Tea Tulsi</a>
-                                </h4>
-                            </div>
-                            <div class="cart-hover">
-                                <h4><a href="product-details.html">+ Add to cart</a></h4>
-                            </div>
-                        </div>
-                        <div class="product-price-wrapper">
-                            <span>$100.00 -</span>
-                            <span class="product-price-old">$120.00 </span>
-                        </div>
-                    </div>
-                </div>
-                <div class="product-wrapper">
-                    <div class="product-img">
-                        <a href="product-details.html">
-                            <img alt="" src="assets/img/product/product-4.jpg">
-                        </a>
-                        <div class="product-action">
-                            <a class="action-wishlist" href="#" title="Wishlist">
-                                <i class="ion-android-favorite-outline"></i>
-                            </a>
-                            <a class="action-cart" href="#" title="Add To Cart">
-                                <i class="ion-ios-shuffle-strong"></i>
-                            </a>
-                            <a class="action-compare" href="#" data-target="#exampleModal" data-toggle="modal"
-                               title="Quick View">
-                                <i class="ion-ios-search-strong"></i>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="product-content text-left">
-                        <div class="product-hover-style">
-                            <div class="product-title">
-                                <h4>
-                                    <a href="product-details.html">Best Friends Tea</a>
-                                </h4>
-                            </div>
-                            <div class="cart-hover">
-                                <h4><a href="product-details.html">+ Add to cart</a></h4>
-                            </div>
-                        </div>
-                        <div class="product-price-wrapper">
-                            <span>$100.00 -</span>
-                            <span class="product-price-old">$120.00 </span>
-                        </div>
-                    </div>
-                </div>
-                <div class="product-wrapper">
-                    <div class="product-img">
-                        <a href="product-details.html">
-                            <img alt="" src="assets/img/product/product-5.jpg">
-                        </a>
-                        <span>-30%</span>
-                        <div class="product-action">
-                            <a class="action-wishlist" href="#" title="Wishlist">
-                                <i class="ion-android-favorite-outline"></i>
-                            </a>
-                            <a class="action-cart" href="#" title="Add To Cart">
-                                <i class="ion-ios-shuffle-strong"></i>
-                            </a>
-                            <a class="action-compare" href="#" data-target="#exampleModal" data-toggle="modal"
-                               title="Quick View">
-                                <i class="ion-ios-search-strong"></i>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="product-content text-left">
-                        <div class="product-hover-style">
-                            <div class="product-title">
-                                <h4>
-                                    <a href="product-details.html">Instant Tea Premix</a>
-                                </h4>
-                            </div>
-                            <div class="cart-hover">
-                                <h4><a href="product-details.html">+ Add to cart</a></h4>
-                            </div>
-                        </div>
-                        <div class="product-price-wrapper">
-                            <span>$100.00 -</span>
-                            <span class="product-price-old">$120.00 </span>
-                        </div>
-                    </div>
-                </div>
-            </div>
+                    @endforeach
         </div>
     </div>
     <!-- Footer style Start -->

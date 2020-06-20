@@ -25,7 +25,23 @@
                         </div>
                         <div class="form-group">
                             <label>Product Image</label>
-                            <input type="file" name="product_image" class="form-control @error("product_image") is-invalid @enderror">
+                            <input type="text" name="product_image" class="form-control @error("product_image") is-invalid @enderror">
+                        </div>
+                        <div class="form-group">
+                            <label>Product Image1</label>
+                            <input type="text" name="product_image1" class="form-control @error("product_image1") is-invalid @enderror">
+                        </div>
+                        <div class="form-group">
+                            <label>Product Image2</label>
+                            <input type="text" name="product_image2" class="form-control @error("product_image2") is-invalid @enderror">
+                        </div>
+                        <div class="form-group">
+                            <label>Product Image3</label>
+                            <input type="text" name="product_image3" class="form-control @error("product_image3") is-invalid @enderror">
+                        </div>
+                        <div class="form-group">
+                            <label>Product Image4</label>
+                            <input type="text" name="product_image4" class="form-control @error("product_image4") is-invalid @enderror">
                         </div>
                         <div class="form-group">
                             <label>Product Desc</label>

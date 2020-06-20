@@ -33,26 +33,15 @@ class ProductController extends Controller
             "category_id"=>"required"
         ]);
         try {
-            $productImage = null;
-            //xử lí để đưa ảnh lên thư mục media trong public
-            //sau đó lấy nguồn file cho vào biến $productImage
-            if ($request->hasFile("product_image")){//nếu request gửi lên cả file product_image là input name
-                $file = $request->file("product_image");
-                $allow = ["png", "jpg", "jpeg", "gif"];
-                $extName = $file->getClientOriginalExtension();//lấy đuôi file
-                if(in_array($extName, $allow)){//đảm bảo đuôi file nằm trong 4 đuôi file trên thì mới up lên
-                    //get fileName
-                    $fileName = time().$file->getClientOriginalName();//name client gửi lên thế nào thì sẽ lấy đc như thế,
-                    //gắn mốc thời gian để phân biệt tránh trường hợp up 2 ảnh giống tên
-                    //upload file into public/media
-                    $file->move(public_path("media/products"), $fileName);
-                    //convert string to productName
-                    $productImage = "media/products/".$fileName;
-                }
-            }
+
             Product::create([
                 "product_name"=>$request->get("product_name"),
-                "product_image"=>$productImage,
+                "product_image"=>$request->get("product_image"),
+                "product_image1"=>$request->get("product_image1"),
+                "product_image2"=>$request->get("product_image2"),
+                "product_image3"=>$request->get("product_image3"),
+                "product_image4"=>$request->get("product_image4"),
+
                 "product_desc"=>$request->get("product_desc"),
                 "price"=>$request->get("price"),
                 "qty"=>$request->get("qty"),
@@ -81,26 +70,15 @@ class ProductController extends Controller
             "category_id"=>"required",
         ]);
         try {
-            $productImage = $products->get("product_image");
-            //xử lí để đưa ảnh lên thư mục media trong public
-            //sau đó lấy nguồn file cho vào biến $productImage
-            if ($request->hasFile("product_image")){//nếu request gửi lên cả file product_image là input name
-                $file = $request->file("product_image");
-                $allow = ["png", "jpg", "jpeg", "gif"];
-                $extName = $file->getClientOriginalExtension();//lấy đuôi file
-                if(in_array($extName, $allow)){//đảm bảo đuôi file nằm trong 4 đuôi file trên thì mới up lên
-                    //get fileName
-                    $fileName = time().$file->getClientOriginalName();//name client gửi lên thế nào thì sẽ lấy đc như thế,
-                    //gắn mốc thời gian để phân biệt tránh trường hợp up 2 ảnh giống tên
-                    //upload file into public/media
-                    $file->move(public_path("media/products"), $fileName);
-                    //convert string to productName
-                    $productImage = "media/products/".$fileName;
-                }
-            }
+
+
             $products->update([
                 "product_name"=>$request->get("product_name"),
-                "product_image"=>$productImage,
+                "product_image"=>$request->get("product_image"),
+                "product_image1"=>$request->get("product_image1"),
+                "product_image2"=>$request->get("product_image2"),
+                "product_image3"=>$request->get("product_image3"),
+                "product_image4"=>$request->get("product_image4"),
                 "product_desc"=>$request->get("product_desc"),
                 "price"=>$request->get("price"),
                 "qty"=>$request->get("qty"),

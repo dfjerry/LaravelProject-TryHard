@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Blog;
 use App\Cart;
 use App\Category;
 use App\Events\OrderCreated;
@@ -54,6 +55,15 @@ class HomeController extends Controller
 //            // tuong duong $p->update(["slug"=>$slug.$p->__get("id")]);
       }
 
+        //Tạo slug Blog
+        $blog= Blog::all();
+        foreach ($blog as $p){
+            $slug = \Illuminate\Support\Str::slug($p->__get("title"));
+            $p->slug = $slug.$p->__get("id");// luu lai vao DB
+            $p->save();
+            // tuong duong $p->update(["slug"=>$slug.$p->__get("id")]);
+        }
+
 
         $categories = Category::orderBy("created_at", "ASC")->get();
         return view("frontend.home", [
@@ -88,6 +98,7 @@ class HomeController extends Controller
             "category" => $category,
             "product" => $product,
             "relativeProduct" => $relativeProducts,
+
         ]);
     }
 
@@ -117,6 +128,19 @@ class HomeController extends Controller
 
         return view("frontend.shop",[
 
+        ]);
+    }
+    public function blog(){
+        $blog = Blog::all();
+        $category =Category::all();
+        return view("frontend.blog",[
+            "blog"=>$blog,
+        ]);
+    }
+    public function blogdetail(Blog $blog){
+        $category =Category::all();
+        return view("frontend.blogdetail",[
+            "blog"=>$blog,
         ]);
     }
     public function header()
@@ -270,4 +294,6 @@ class HomeController extends Controller
 //            "currentProduct" => $currentProduct,
 //        ]);
 //    }
+
+
 }

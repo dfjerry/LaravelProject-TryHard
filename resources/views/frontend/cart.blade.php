@@ -35,7 +35,7 @@
                                 @foreach($products as $p)
                                     <tr>
                                         <td class="product-thumbnail">
-                                            <a href="#"><img src="{{$p->getImage()}}" alt=""
+                                            <a href="#"><img src="{{$p->__get("product_image")}}" alt=""
                                                              style="width: 300px; height: 300px" alt=""></a>
                                         </td>
                                         <td class="product-name"><a href="#">{{$p->__get("product_name")}}</a></td>
