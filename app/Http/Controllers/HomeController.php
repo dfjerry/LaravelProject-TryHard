@@ -112,8 +112,21 @@ class HomeController extends Controller
         return view("frontend.myaccount");
     }
     public function shop(){
-        return view("frontend.shop");
+
+        return view("frontend.shop",[
+
+        ]);
     }
+    public function header(Request $request)
+    {
+        $products = Product::all();
+        $categories = Category::all();
+        return view("components.frontend.header",[
+            "products" => $products,
+            "category" => $categories
+        ]);
+    }
+
 
     public function addToCart(Product $product, Request $request)
     {

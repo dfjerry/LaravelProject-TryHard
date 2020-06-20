@@ -21,11 +21,14 @@
                                     <li class="mega-menu-position top-hover"><a href="{{url("/shop")}}">shop</a>
                                         <ul class="mega-menu">
                                             <li>
+{{--                                                @foreach($categories as $cat)--}}
+{{--                                                    @foreach($product as $pro)--}}
                                                 <ul>
-                                                    <li class="mega-menu-title"></li>
-                                                    <li><a href="shop.html"></a></li>
-
+{{--                                                    <li class="mega-menu-title">{{$pr->__get("product_name")}}</li>--}}
+{{--                                                    <li><a href="shop.html">{{$cat->__get("category_name")}}</a></li>--}}
                                                 </ul>
+{{--                                                    @endforeach--}}
+{{--                                                    @endforeach--}}
                                             </li>
                                         </ul>
                                     </li>
